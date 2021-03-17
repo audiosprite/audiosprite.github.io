@@ -1,0 +1,52 @@
+@import './colors.scss';
+
+@keyframes hueRotate {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(-100deg);
+  }
+}
+@keyframes opacityRotate {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+@keyframes boxShadowHum {
+  0%,
+  100% {
+    box-shadow: 0 0 0 $grey;
+  }
+  50% {
+    box-shadow: 0 -40px 40px $grey;
+  }
+}
+@keyframes saturateRotate {
+  0%,
+  100% {
+    filter: saturate(1);
+  }
+  50% {
+    filter: saturate(1.2);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+@keyframes playTape {
+  100% {
+    transform: rotate(360deg);
+  }
+}

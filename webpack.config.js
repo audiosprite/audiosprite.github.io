@@ -12,7 +12,7 @@ module.exports = {
   devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
   },
 
   module: {
@@ -20,6 +20,27 @@ module.exports = {
       // use ts-loader for ts and js files so all files are converted to es5
       { test: /\.(tsx?|js)$/, exclude: /node_modules/, loader: 'ts-loader' },
       { test: /\.js$/, loader: 'source-map-loader' },
+      {
+        test: /\.(ttf|eot|woff|woff2|gz)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]',
+        },
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader', // creates style nodes from JS strings
+          },
+          {
+            loader: 'css-loader', // translates CSS into CommonJS
+          },
+          {
+            loader: 'sass-loader', // compiles Sass to CSS
+          },
+        ],
+      },
     ],
   },
 

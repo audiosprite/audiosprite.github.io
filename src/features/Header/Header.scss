@@ -1,0 +1,14 @@
+@import '../../scss';
+
+header {
+  .Name {
+    font-size: 24px;
+    @include piecewise(font-size, 28, 48);
+    font-weight: bold;
+    font-family: Fakt, sans-serif;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    max-height: 42px;
+    @include noSelect();
+  }
+}
