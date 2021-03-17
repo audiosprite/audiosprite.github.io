@@ -18,13 +18,12 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-interactive": "^0.9.5",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-soundplayer": "^1.0.5"
   },
   "devDependencies": {
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
-    "@types/react-interactive": "^0.9.0",
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",

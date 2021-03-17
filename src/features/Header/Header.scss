@@ -1,10 +1,15 @@
 @import '../../scss';
 
 header {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   .Name {
     font-size: 24px;
-    @include piecewise(font-size, 28, 48);
-    font-weight: bold;
+    // @include piecewise(font-size, 28, 48);
+    font-size: calc(28px + (100vw - 480px) / 26);
+    font-weight: 700;
     font-family: Fakt, sans-serif;
     letter-spacing: 0.3px;
     white-space: nowrap;

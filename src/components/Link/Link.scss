@@ -1,0 +1,15 @@
+a,
+.Link {
+  display: flex;
+  color: initial;
+  text-decoration: none;
+  opacity: 1;
+  transition: transform 75ms ease, opacity 150ms ease;
+  &:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
