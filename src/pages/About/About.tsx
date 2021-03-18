@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Spacer, Third } from '../../components';
+import { Third } from '../../components';
 import { Img } from '../../components/Icons';
 import './About.scss';
+
+const bio = `John Fio is a composer (ASCAP), multi-instrumentalist, producer, arranger, and audio engineer. He lives in Brooklyn, New York.`;
 
 const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel ante mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc non ipsum semper, dapibus nisl eget, eleifend quam. Nunc pharetra risus felis, eget tempus magna dictum eget. Sed vitae purus libero. Quisque non ex justo. Maecenas ac lectus at nunc fermentum imperdiet auctor id dolor. Proin molestie risus eu felis placerat, vel tempus erat sodales. Integer gravida, elit at rutrum laoreet, est tellus euismod quam, id efficitur libero neque vel ligula.
 
@@ -11,15 +13,14 @@ Etiam at orci eleifend, pharetra dui quis, aliquet eros. Nulla auctor lorem puru
 
 const About = () => (
   <div className="About">
-    <div className="About--Inner">
-      <div className="About--PortraitWrapper">
-        <Third>
+    <Third>
+      <div className="About--Inner">
+        <div className="About--PortraitWrapper">
           <Img className="About--Portrait" src="photos/portrait-emi.jpg" />
-        </Third>
+        </div>
+        <div className="About--Copy">{bio}</div>
       </div>
-      {/* <Spacer spacing={32} /> */}
-      <div className="About--Copy">{lorem}</div>
-    </div>
+    </Third>
   </div>
 );
 

@@ -1,3 +1,13 @@
+@import './colors.scss';
+
+@mixin boxShadow() {
+  box-shadow: 0 1px 2px $grey;
+  transition: box-shadow 75ms ease;
+  &:hover {
+    box-shadow: 0 2px 3px $grey;
+  }
+}
+
 @mixin clickAnimation($opacity: 0.5, $time: 150ms) {
   opacity: 1;
   transform: $time ease;
