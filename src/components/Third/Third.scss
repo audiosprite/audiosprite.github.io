@@ -3,14 +3,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   .Third--Upper {
-    flex: 1 1 auto;
+    flex: 1 1 0;
   }
   .Third--Children {
-    flex: 0 0 auto;
+    flex: 1 0 auto;
   }
   .Third--Lower {
-    flex: 2 2 auto;
+    flex: 2 2 0;
   }
 }
