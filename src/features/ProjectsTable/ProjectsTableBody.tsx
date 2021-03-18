@@ -31,7 +31,7 @@ const ProjectsTableBody = ({
             <Img
               className="ProjectsTableBody--Media"
               size={16}
-              src={`media/${type}.svg`}
+              src={`media/${type === 'LetsPlay' ? 'podcast' : type}.svg`}
             />
           </ProjectsTableCell>
           <ProjectsTableCell className={columns[1]}>
