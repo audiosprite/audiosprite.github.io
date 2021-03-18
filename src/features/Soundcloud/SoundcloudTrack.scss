@@ -2,20 +2,17 @@
 
 .SoundcloudTrack {
   position: relative;
-  //   width: 200px;
-  //   height: 200px;
   $squareMin: 105;
   $squareMax: 200;
   @include piecewise(height, $squareMin, $squareMax);
   @include piecewise(width, $squareMin, $squareMax);
-  min-width: $squareMin;
-  min-height: $squareMin;
-  max-width: $squareMax;
-  max-height: $squareMax;
+  min-width: #{$squareMin}px;
+  min-height: #{$squareMin}px;
+  max-width: #{$squareMax}px;
+  max-height: #{$squareMax}px;
   width: calc(105px + (100vw - 480px) / 5.4736842105);
   height: calc(105px + (100vw - 480px) / 5.4736842105);
   background-repeat: no-repeat;
-  position: relative;
   overflow: hidden;
   border-radius: 10px;
   margin: 14px 7px;
