@@ -9,7 +9,7 @@ type StoreProps = {
   size?: number;
 };
 
-const SocialIcon = ({ name, size = 20 }: StoreProps) => {
+const SocialIcon = ({ name, size = 24 }: StoreProps) => {
   return (
     <img
       alt={name}

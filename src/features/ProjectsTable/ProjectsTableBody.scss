@@ -7,6 +7,9 @@ tbody.ProjectsTableBody {
       &.release > * {
         justify-content: center;
       }
+      img.ProjectsTableBody--Media {
+        filter: grayscale(1);
+      }
       .ProjectsTableBody--StoresCell {
         display: flex;
         flex-wrap: nowrap;

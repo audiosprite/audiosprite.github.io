@@ -24,7 +24,6 @@ const SoundcloudTrack = ({
   genre,
   permalink_url,
   playlistIndex,
-  ...track
 }: SoundcloudTrackProps) => {
   const {
     activeIndex,

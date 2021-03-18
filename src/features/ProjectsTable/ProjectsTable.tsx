@@ -6,6 +6,7 @@ import projects from '../../data/projects';
 import './ProjectsTable.scss';
 
 export const projectsTableColumns = [
+  '',
   'project',
   '',
   '',

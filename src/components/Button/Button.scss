@@ -1,15 +1,11 @@
-a,
-.Link:not(div) {
-  color: initial;
-  text-decoration: none;
+@import '../../scss';
+
+button.Button {
   opacity: 1;
   transition: transform 75ms ease, opacity 150ms ease;
   &:hover {
     opacity: 0.85;
     transform: translateY(-1px);
-    &:not(.hideUnderline) {
-      text-decoration: underline;
-    }
   }
   &:active {
     transform: translateY(1px);

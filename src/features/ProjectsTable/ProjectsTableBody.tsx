@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from '../../components';
-import { Store } from '../../components/Icons';
+import { Img, Store } from '../../components/Icons';
 import { Project } from '../../types';
 import ProjectsTableCell from './ProjectsTableCell';
 import './ProjectsTableBody.scss';
@@ -23,13 +23,21 @@ const ProjectsTableBody = ({
         publisher,
         releaseDate,
         stores,
+        type,
         url,
       }) => (
         <tr key={name}>
           <ProjectsTableCell className={columns[0]}>
-            <Link href={url}>{name}</Link>
+            <Img
+              className="ProjectsTableBody--Media"
+              size={16}
+              src={`media/${type}.svg`}
+            />
           </ProjectsTableCell>
           <ProjectsTableCell className={columns[1]}>
+            <Link href={url}>{name}</Link>
+          </ProjectsTableCell>
+          <ProjectsTableCell className={columns[2]}>
             {musicStores
               ?.filter(({ name, url }) => url && name === 'Bandcamp')
               .map(({ name, url }) => (
@@ -38,7 +46,7 @@ const ProjectsTableBody = ({
                 </Link>
               ))}
           </ProjectsTableCell>
-          <ProjectsTableCell className={columns[2]}>
+          <ProjectsTableCell className={columns[3]}>
             <div className="ProjectsTableBody--StoresCell">
               {stores
                 ?.filter(({ url }) => url)
@@ -49,13 +57,13 @@ const ProjectsTableBody = ({
                 ))}
             </div>
           </ProjectsTableCell>
-          <ProjectsTableCell className={columns[3]}>
+          <ProjectsTableCell className={columns[4]}>
             <Link href={developer.url}>{developer.name}</Link>
           </ProjectsTableCell>
-          <ProjectsTableCell className={columns[4]}>
+          <ProjectsTableCell className={columns[5]}>
             {publisher && <Link href={publisher.url}>{publisher?.name}</Link>}
           </ProjectsTableCell>
-          <ProjectsTableCell className={columns[5]}>
+          <ProjectsTableCell className={columns[6]}>
             {releaseDate?.getFullYear() || '-'}
           </ProjectsTableCell>
         </tr>

@@ -8,7 +8,9 @@ const Nav = () => (
   <nav>
     {navOptions.map(({ to }, i) => (
       <React.Fragment key={to}>
-        <Link to={to}>{to}</Link>
+        <Link hideUnderline to={to}>
+          {to}
+        </Link>
         {/* {i !== navOptions.length - 1 && <Spacer />} */}
       </React.Fragment>
     ))}

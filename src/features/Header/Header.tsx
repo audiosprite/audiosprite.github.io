@@ -5,7 +5,7 @@ import './Header.scss';
 
 const Header = () => (
   <header>
-    <Link className="Name" to="/">
+    <Link className="Name" hideUnderline to="/">
       John Fio
     </Link>
     <Nav />

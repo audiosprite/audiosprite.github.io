@@ -5,8 +5,12 @@ export const SoundcloudContext = React.createContext({
   playing: false,
   setActiveIndex: (i: number) => {},
   soundCloudAudio: {
+    audio: {
+      currentTime: 0,
+      duration: 0,
+    },
     pause: () => {},
-    play: ({ playlistIndex }: { playlistIndex: number }) => {},
+    play: ({ playlistIndex }: { playlistIndex?: number }) => {},
     _playlist: { tracks: [] },
   },
 });
