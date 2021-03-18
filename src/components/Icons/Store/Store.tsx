@@ -11,7 +11,9 @@ type StoreProps = {
 };
 
 const Store = ({ name, size = 16 }: StoreProps) => {
-  const directory = name === 'Instagram' ? socialImgDir : storeImgDir;
+  const directory = ['Instagram', 'Bandcamp'].includes(name)
+    ? socialImgDir
+    : storeImgDir;
   return (
     <img
       className="Store"
