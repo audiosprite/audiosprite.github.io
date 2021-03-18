@@ -1,6 +1,9 @@
 tbody.ProjectsTableBody {
   tr {
     td {
+      &.project {
+        font-style: italic;
+      }
       &.release {
         text-align: center;
       }

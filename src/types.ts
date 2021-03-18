@@ -70,6 +70,7 @@ export enum ProjectType {
   game = 'Videogame',
   shortfilm = 'Shortfilm',
   podcast = 'Podcast',
+  letsplay = 'LetsPlay',
 }
 
 type Publisher = {
@@ -78,11 +79,13 @@ type Publisher = {
 };
 
 export enum StoreName {
+  instagram = 'Instagram',
+  itch = 'itch.io',
+  itunes = 'iTunes',
+  ps4 = 'PlayStation 4',
   steam = 'Steam',
   switch = 'Switch',
-  ps4 = 'PlayStation 4',
   xboxone = 'Xbox One',
-  itch = 'itch.io',
   youtube = 'YouTube',
 }
 
