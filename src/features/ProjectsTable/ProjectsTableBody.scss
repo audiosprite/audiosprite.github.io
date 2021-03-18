@@ -4,8 +4,8 @@ tbody.ProjectsTableBody {
       &.project {
         font-style: italic;
       }
-      &.release {
-        text-align: center;
+      &.release > * {
+        justify-content: center;
       }
       .ProjectsTableBody--StoresCell {
         display: flex;
