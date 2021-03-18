@@ -1,4 +1,10 @@
-import { StoreName, ProjectType, MusicStoreName, Role, Genre } from '../types';
+import {
+  StoreName,
+  ProjectType,
+  MusicStoreName,
+  Role,
+  Genre,
+} from '../../types';
 
 export default {
   developer: {

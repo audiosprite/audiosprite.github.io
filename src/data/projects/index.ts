@@ -1,13 +1,13 @@
-import { Project } from '../types';
+import { Project } from '../../types';
 
 import epanalepsis from './epanalepsis';
 import zarvot from './zarvot';
 import kungfukickball from './kungfukickball';
-import skatestory from './skatestory';
+// import skatestory from './skatestory';
 import mangoman from './mangoman';
 
 const projects: Project[] = [
-  skatestory,
+  // skatestory,
   kungfukickball,
   zarvot,
   mangoman,

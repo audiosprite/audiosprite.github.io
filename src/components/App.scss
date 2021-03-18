@@ -6,10 +6,24 @@
   padding: 20px 16px;
   display: flex;
   flex-direction: column;
-  background-color: $pink;
-  // animation: hueRotate infinite 40s;
-}
-
-.AppBody {
-  flex: 1 1 auto;
+  position: relative;
+  background: transparent;
+  .App--Background {
+    background-color: $pink;
+    animation: hueRotate infinite 40s;
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+  }
+  .AppBody {
+    flex: 1 1 auto;
+    overflow: auto;
+    display: flex;
+    > * {
+      flex: 1 1 auto;
+    }
+  }
 }

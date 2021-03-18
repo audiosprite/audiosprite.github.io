@@ -1,4 +1,4 @@
-import { StoreName, ProjectType, Role, MusicStoreName } from '../types';
+import { StoreName, ProjectType, Role, MusicStoreName } from '../../types';
 
 export default {
   name: 'Zarvot',

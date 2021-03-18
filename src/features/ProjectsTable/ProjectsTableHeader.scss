@@ -1,0 +1,14 @@
+thead.ProjectsTableHeader {
+  tr {
+    td {
+      //   font-weight: 600;
+      text-transform: capitalize;
+      //   &:not(:first-child) {
+      //     text-align: right;
+      //   }
+      &.release {
+        text-align: center;
+      }
+    }
+  }
+}

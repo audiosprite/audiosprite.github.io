@@ -8,6 +8,10 @@
   $squareMax: 200;
   @include piecewise(height, $squareMin, $squareMax);
   @include piecewise(width, $squareMin, $squareMax);
+  min-width: $squareMin;
+  min-height: $squareMin;
+  max-width: $squareMax;
+  max-height: $squareMax;
   width: calc(105px + (100vw - 480px) / 5.4736842105);
   height: calc(105px + (100vw - 480px) / 5.4736842105);
   background-repeat: no-repeat;
@@ -19,7 +23,7 @@
   cursor: pointer;
   box-shadow: 0 1px 2px $grey;
   text-align: center;
-  transition: 75ms ease;
+  transition: transform 75ms ease, box-shadow 75ms ease;
   &:hover {
     transform: translateY(-1px);
     box-shadow: 0 2px 3px $grey;
