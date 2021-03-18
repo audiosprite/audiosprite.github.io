@@ -34,6 +34,14 @@
       white-space: pre-line;
       line-height: 1.3;
       font-size: 18px;
+      @media (min-width: $globalMin) {
+        font-size: 18px;
+      }
+      font-size: calc(18px + (100vw - 480px) / 260);
+      @media (min-width: $globalMax) {
+        font-size: 20px;
+      }
+      //   @include piecewise(font-size, 18, 20);
     }
   }
 }
