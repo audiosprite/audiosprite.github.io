@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
+// @ts-ignore
 import { withSoundCloudAudio } from 'react-soundplayer/addons';
 import { SoundcloudContext } from '../hooks/useSoundcloud';
 import { Footer, Header } from '../features';

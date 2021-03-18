@@ -10,6 +10,7 @@ const Soundcloud = () => {
   return (
     <div className="Soundcloud">
       {tracks.map((track, i) => (
+        // @ts-ignore
         <SoundcloudTrack key={track.id} playlistIndex={i} {...track} />
       ))}
     </div>

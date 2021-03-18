@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { PlayButton, Progress } from 'react-soundplayer/components';
+// @ts-ignore
+import { PlayButton } from 'react-soundplayer/components';
 import { Link } from '../../components';
 import { SoundcloudContext } from '../../hooks/useSoundcloud';
 import './SoundcloudTrack.scss';
