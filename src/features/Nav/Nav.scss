@@ -5,7 +5,14 @@ $navBreakpoint: 500;
 nav {
   display: flex;
   @include piecewise(flex-direction, column, row, $navBreakpoint);
-  @include piecewise(font-size, 18, 22);
+  @include piecewise(font-size, 15, 22);
+  @media (min-width: $globalMin) {
+    font-size: 15px;
+  }
+  font-size: calc(15px + (100vw - 480px) / 74.2857142857);
+  @media (min-width: $globalMax) {
+    font-size: 22px;
+  }
   a {
     @include noSelect();
     &:not(:last-child) {

@@ -1,3 +1,5 @@
+@import '../../scss';
+
 table.ProjectsTable {
   max-width: 1200px;
   width: 100%;
@@ -5,5 +7,13 @@ table.ProjectsTable {
     font-size: 20px;
     padding: 4px 2px;
     vertical-align: middle;
+    @include piecewise(font-size, 15, 20);
+    @media (min-width: $globalMin) {
+      font-size: 15px;
+    }
+    font-size: calc(15px + (100vw - 480px) / 104);
+    @media (min-width: $globalMax) {
+      font-size: 20px;
+    }
   }
 }
