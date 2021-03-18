@@ -14,7 +14,7 @@ const Link: React.FC<LinkProps> = ({ className = '', children, href, to }) => {
     <Component
       className={`Link ${className}`}
       {...(Component === ReactRouterLink ? { to } : {})}
-      {...(Component === 'a' ? { href, target: '_blank' } : {})}
+      {...(Component === 'a' ? { href, target: '__blank' } : {})}
     >
       {children}
     </Component>

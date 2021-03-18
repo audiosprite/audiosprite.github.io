@@ -9,7 +9,7 @@ export const twitterHandle = 'audiosprite';
 export const soundcloudHandle = 'audiosprite';
 export const bandcampHandle = 'audiosprite';
 
-export const playlistLink = 'https://soundcloud.com/audiosprite/sets/reel';
+export const resolveUrl = 'https://soundcloud.com/audiosprite/sets/reel';
 
 export const clientId = '9f32c400308da184e94e83dbbf3391c7';
 export const userId = '2712198';
