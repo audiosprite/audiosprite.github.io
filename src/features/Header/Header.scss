@@ -9,7 +9,13 @@ header {
   .Name {
     font-size: 24px;
     // @include piecewise(font-size, 28, 48);
+    @media (max-width: $globalMin) {
+      font-size: 28px !important;
+    }
     font-size: calc(28px + (100vw - 480px) / 26);
+    @media (min-width: $globalMax) {
+      font-size: 48px !important;
+    }
     font-weight: 700;
     font-family: Fakt, sans-serif;
     letter-spacing: 0.3px;

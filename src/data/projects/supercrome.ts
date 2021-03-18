@@ -6,7 +6,7 @@ export default {
     url: 'http://supercro.me/',
   },
   earlyAccess: true,
-  name: 'Super Crome',
+  name: 'Super Crome: Bullet Purgatory',
   // pressQuotes: [
   //   {
   //     quote: "Pleasing sounds...",
@@ -15,6 +15,7 @@ export default {
   //     url: "https://www.thecambridgegeek.com/posts/2019/03/20190324-a.php",
   //   },
   // ],
+  releaseDate: new Date('Mar 19, 2019'),
   type: ProjectType['game'],
   roles: [Role['music'], Role['sfx']],
   stores: [

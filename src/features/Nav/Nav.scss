@@ -5,6 +5,7 @@ $navBreakpoint: 500;
 nav {
   display: flex;
   @include piecewise(flex-direction, column, row, $navBreakpoint);
+  @include piecewise(font-size, 18, 22);
   a:not(:last-child) {
     @include piecewise(margin-right, 0, 8, $navBreakpoint);
   }

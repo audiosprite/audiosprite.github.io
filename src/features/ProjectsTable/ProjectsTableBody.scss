@@ -1,7 +1,18 @@
 tbody.ProjectsTableBody {
-  td {
-    &.release {
-      text-align: center;
+  tr {
+    td {
+      &.release {
+        text-align: center;
+      }
+      .ProjectsTableBody--StoresCell {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+    }
+    &:first-child {
+      td {
+        padding-top: 8px;
+      }
     }
   }
 }

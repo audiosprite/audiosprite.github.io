@@ -8,13 +8,13 @@ import {
 
 export default {
   developer: {
-    name: 'Joseph Gribbin',
-    url: 'https://josephgribbin.itch.io/',
+    name: 'Andrew Simon Thomas LLC',
+    // url: 'https://josephgribbin.itch.io/',
   },
-  genrePool: [[Genre['chiptune']]],
-  name: 'Mangoman',
+  // genrePool: [[Genre['chiptune']]],
+  name: 'Roll Control',
   type: ProjectType['game'],
-  releaseDate: new Date('Aug 2, 2016'),
+  releaseDate: new Date('May 18, 2020'),
   roles: [Role['music']],
   // selectTracks: [],
   // musicStores: [
@@ -25,8 +25,8 @@ export default {
   // ],
   stores: [
     {
-      name: StoreName['itch'],
-      url: 'https://josephgribbin.itch.io/mangoman',
+      name: StoreName['steam'],
+      url: 'https://store.steampowered.com/app/1290920/Roll_Control/',
     },
   ],
 };

@@ -1,0 +1,16 @@
+.Third {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .Third--Upper {
+    flex: 1 1 auto;
+  }
+  .Third--Children {
+    flex: 0 0 auto;
+  }
+  .Third--Lower {
+    flex: 2 2 auto;
+  }
+}

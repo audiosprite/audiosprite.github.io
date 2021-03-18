@@ -7,13 +7,14 @@ import './ProjectsTable.scss';
 
 export const projectsTableColumns = [
   'project',
-  'links',
-  'publisher',
+  '',
+  '',
   'developer',
+  'publisher',
   'release',
 ];
 
-const initialSortBy = { column: 'year', reverse: false };
+const initialSortBy = { column: 'release', reverse: false };
 const ProjectsTableContext = React.createContext({
   handleSort: () => {},
   sortBy: initialSortBy,
@@ -21,6 +22,7 @@ const ProjectsTableContext = React.createContext({
 
 const ProjectsTable = () => {
   const { handleSort, sortBy } = useSort(initialSortBy);
+  // const sortedProjects = projects.sort(sortBy);
   return (
     <ProjectsTableContext.Provider value={{ handleSort, sortBy }}>
       <table className="ProjectsTable">

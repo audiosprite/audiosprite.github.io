@@ -1,5 +1,5 @@
 const TerserPlugin = require('terser-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
+// const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: `${__dirname}/src/index.tsx`,
@@ -12,7 +12,7 @@ module.exports = {
   // generate different source maps for dev and production
   devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
 
-  plugins: [new CompressionPlugin()],
+  // plugins: [new CompressionPlugin()],
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],

@@ -1,13 +1,14 @@
 import * as React from 'react';
+import { Third } from '../../components';
 import { ProjectsTable } from '../../features';
 import './Projects.scss';
 
-const Projects = () => {
-  return (
-    <div className="Projects">
+const Projects = () => (
+  <div className="Projects">
+    <Third>
       <ProjectsTable />
-    </div>
-  );
-};
+    </Third>
+  </div>
+);
 
 export default Projects;

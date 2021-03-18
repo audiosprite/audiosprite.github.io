@@ -8,8 +8,8 @@ type ProjectsTableHeaderProps = {
 const ProjectsTableHeader = ({ columns = [] }: ProjectsTableHeaderProps) => (
   <thead className="ProjectsTableHeader">
     <tr>
-      {columns.map((column) => (
-        <td className={column} key={column}>
+      {columns.map((column, i) => (
+        <td className={column} key={i}>
           {column}
         </td>
       ))}

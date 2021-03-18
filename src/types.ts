@@ -1,6 +1,6 @@
 type Developer = {
   name: string;
-  url: string;
+  url?: string;
 };
 
 export enum Genre {
@@ -68,6 +68,8 @@ type PressQuote = {
 
 export enum ProjectType {
   game = 'Videogame',
+  shortfilm = 'Shortfilm',
+  podcast = 'Podcast',
 }
 
 type Publisher = {
@@ -81,6 +83,7 @@ export enum StoreName {
   ps4 = 'PlayStation 4',
   xboxone = 'Xbox One',
   itch = 'itch.io',
+  youtube = 'YouTube',
 }
 
 export type Store = {

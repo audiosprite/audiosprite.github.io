@@ -1,6 +1,9 @@
+@import '../../scss';
+
 thead.ProjectsTableHeader {
   tr {
     td {
+      border-bottom: 1px solid black(0.75);
       //   font-weight: 600;
       text-transform: capitalize;
       //   &:not(:first-child) {

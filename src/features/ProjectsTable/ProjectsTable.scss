@@ -1,4 +1,9 @@
 table.ProjectsTable {
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
+  td {
+    font-size: 20px;
+    padding: 4px 2px;
+    vertical-align: middle;
+  }
 }
