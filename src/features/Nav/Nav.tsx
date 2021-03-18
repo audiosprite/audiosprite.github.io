@@ -1,20 +1,32 @@
 import * as React from 'react';
+import { useLocation } from 'react-router-dom';
 import { Link } from '../../components';
 import './Nav.scss';
 
-const navOptions = [{ to: 'projects' }, { to: 'about' }, { to: 'contact' }];
+const navOptions = [
+  { label: 'audio gallery', to: '/' },
+  { label: 'credits', to: '/credits' },
+  { label: 'about', to: '/about' },
+  { label: 'contact', to: '/contact' },
+];
 
-const Nav = () => (
-  <nav>
-    {navOptions.map(({ to }, i) => (
-      <React.Fragment key={to}>
-        <Link hideUnderline to={to}>
-          {to}
+const Nav = () => {
+  const { pathname } = useLocation();
+  console.log(pathname);
+  return (
+    <nav>
+      {navOptions.map(({ label, to }, i) => (
+        <Link
+          className={`Nav--Link ${pathname === to ? 'activeRoute' : ''}`.trim()}
+          hideUnderline
+          key={to}
+          to={to}
+        >
+          {label || to}
         </Link>
-        {/* {i !== navOptions.length - 1 && <Spacer />} */}
-      </React.Fragment>
-    ))}
-  </nav>
-);
+      ))}
+    </nav>
+  );
+};
 
 export default Nav;
