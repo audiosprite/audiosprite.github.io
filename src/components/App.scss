@@ -3,7 +3,6 @@
 .App {
   height: 100vh;
   width: 100vw;
-  padding: 20px 16px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -22,6 +21,7 @@
     flex: 1 1 auto;
     overflow: auto;
     display: flex;
+    padding: 0 16px;
     > * {
       flex: 1 1 auto;
     }
