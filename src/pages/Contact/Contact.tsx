@@ -1,12 +1,19 @@
 import * as React from 'react';
-import { Third } from '../../components';
+import { Spacer, Third } from '../../components';
 import { email } from '../../data';
+import { Social } from '../../features';
 import './Contact.scss';
 
 const Contact = () => {
   return (
     <div className="Contact">
-      <Third>{email}</Third>
+      <Third>
+        <div className="Contact--Content">
+          <div>{email}</div>
+          <Spacer spacing={20} />
+          <Social />
+        </div>
+      </Third>
     </div>
   );
 };
