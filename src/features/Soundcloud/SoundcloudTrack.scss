@@ -78,6 +78,7 @@
     top: 3px;
     background: $darkGrey;
     font-size: 14;
+    text-transform: lowercase;
     @include piecewise(font-size, 14, 18);
     transition: 75ms ease;
     &:hover {
