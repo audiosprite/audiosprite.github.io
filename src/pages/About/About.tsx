@@ -3,7 +3,9 @@ import { Third } from '../../components';
 import { Img } from '../../components/Icons';
 import './About.scss';
 
-const bio = `John Fio is a composer (ASCAP), multi-instrumentalist, producer, arranger, and audio engineer. He lives in Brooklyn, New York.`;
+const bio = `John Fio is a composer (ASCAP), multi-instrumentalist, producer, arranger, and audio engineer.
+
+He lives in Brooklyn, New York.`;
 
 const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel ante mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc non ipsum semper, dapibus nisl eget, eleifend quam. Nunc pharetra risus felis, eget tempus magna dictum eget. Sed vitae purus libero. Quisque non ex justo. Maecenas ac lectus at nunc fermentum imperdiet auctor id dolor. Proin molestie risus eu felis placerat, vel tempus erat sodales. Integer gravida, elit at rutrum laoreet, est tellus euismod quam, id efficitur libero neque vel ligula.
 
