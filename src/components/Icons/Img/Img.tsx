@@ -13,7 +13,7 @@ const Img = ({ alt, className = '', src, size }: ImgProps) => (
   <img
     alt={alt}
     className={`Img ${className}`.trim()}
-    src={`${imgDir}${src}`}
+    src={`${imgDir}${src}`.toLowerCase()}
     style={{ width: size }}
   />
 );
