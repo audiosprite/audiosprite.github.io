@@ -12,7 +12,6 @@ const navOptions = [
 
 const Nav = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
   return (
     <nav>
       {navOptions.map(({ label, to }, i) => (

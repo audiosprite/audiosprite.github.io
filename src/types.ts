@@ -59,7 +59,8 @@ export enum Role {
   sfx = 'SFX',
 }
 
-type PressQuote = {
+export type PressQuote = {
+  projectName?: string;
   quote: string;
   author: string;
   outlet: string;

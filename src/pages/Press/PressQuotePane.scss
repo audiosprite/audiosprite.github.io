@@ -1,0 +1,40 @@
+@import '../../scss';
+
+.PressQuotePane {
+  justify-self: center;
+  align-self: center;
+  max-width: 200px;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  .PressQuotePane--Quote {
+    font-style: italic;
+    font-size: 18px;
+  }
+  .PressQuotePane--Right {
+    display: inline;
+    text-align: right;
+    font-size: 15px;
+    .PressQuotePane--AuthorWrapper {
+      display: inline;
+      .PressQuotePane--AuthorEmdash {
+        display: inline;
+        color: $grey;
+      }
+      .PressQuotePane--Author {
+        display: inline;
+      }
+    }
+    .PressQuotePane--Outlet {
+      display: inline;
+      font-weight: 600;
+    }
+    .PressQuotePane--ProjectName {
+      //   display: inline;
+      font-size: 11px;
+      font-weight: 900px;
+      //   opacity: 0.6;
+      color: $grey;
+    }
+  }
+}

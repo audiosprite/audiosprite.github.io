@@ -1,0 +1,15 @@
+.Press {
+  .PressQuotes {
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 14px;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // flex-wrap: wrap;
+    // > * {
+    //   max-width: 21%;
+    //   // flex-basis: 50%;
+    // }
+  }
+}
