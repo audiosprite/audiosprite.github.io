@@ -5,6 +5,22 @@ import { shuffle } from '../../utils/shuffle';
 import PressQuotePane from './PressQuotePane';
 import './Press.scss';
 
+const outlets = ['Waypoint', 'RockPaperShotgun'];
+
+// @ts-ignore
+const sort = (a, b) => {
+  const aOutlet = outlets.includes(a.outlet);
+  const bOutlet = outlets.includes(b.outlet);
+  if (aOutlet || bOutlet) {
+    if (bOutlet) {
+      if (aOutlet) return 0;
+      return 1;
+    }
+    return -1;
+  }
+  return 0;
+};
+
 // @ts-ignore
 const allPressQuotes: PressQuote[] = shuffle(
   // @ts-ignore
@@ -19,7 +35,8 @@ const allPressQuotes: PressQuote[] = shuffle(
     ],
     [],
   ),
-);
+  // @ts-ignore
+).sort(sort);
 
 const Press = () => {
   return (
