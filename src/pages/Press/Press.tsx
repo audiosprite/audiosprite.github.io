@@ -1,24 +1,27 @@
 import * as React from 'react';
 import projects from '../../data/projects';
 import { PressQuote } from '../../types';
+import { shuffle } from '../../utils/shuffle';
 import PressQuotePane from './PressQuotePane';
 import './Press.scss';
 
 // @ts-ignore
-const allPressQuotes: PressQuote[] = projects.reduce(
+const allPressQuotes: PressQuote[] = shuffle(
   // @ts-ignore
-  (acc, curr) => [
-    ...acc,
-    ...(curr.pressQuotes?.map((pressQuote) => ({
-      projectName: curr.name,
-      ...pressQuote,
-    })) || []),
-  ],
-  [],
+  projects.reduce(
+    // @ts-ignore
+    (acc, curr) => [
+      ...acc,
+      ...(curr.pressQuotes?.map((pressQuote) => ({
+        projectName: curr.name,
+        ...pressQuote,
+      })) || []),
+    ],
+    [],
+  ),
 );
 
 const Press = () => {
-  console.log(allPressQuotes);
   return (
     <div className="Press">
       <div className="Press--TopSpacer" />
