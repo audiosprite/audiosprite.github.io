@@ -5,7 +5,6 @@ import { shuffle } from '../../utils/shuffle';
 import PressQuotePane from './PressQuotePane';
 import { RebelFM } from './RebelFM';
 import './Press.scss';
-import { Third } from '../../components';
 
 const outlets = ['Waypoint', 'RockPaperShotgun', 'RebelFM'];
 
@@ -52,9 +51,9 @@ const Press = () => (
       <div className="Press--BottomSpacer" />
     </div>
     <div className="Press--Right">
-      <Third>
+      <div className="Press--RightInner">
         <RebelFM />
-      </Third>
+      </div>
     </div>
   </div>
 );

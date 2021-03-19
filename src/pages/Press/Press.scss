@@ -1,6 +1,4 @@
 .Press {
-  // display: flex;
-  // flex-direction: row !important;
   display: grid !important;
   grid-template-columns: repeat(2, auto);
   column-gap: 48px;
@@ -8,27 +6,18 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    overflow: auto;
+    // overflow: auto;
     .Press--TopSpacer {
       min-height: 0;
       flex: 0 0 calc(33vh - 140px);
     }
     .PressQuotes {
-      // display: grid;
-      // grid-template-columns: 100%;
-      // row-gap: 14px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       > *:not(:last-child) {
         margin-bottom: 20px;
       }
-      // align-items: center;
-      // flex-wrap: wrap;
-      // > * {
-      //   max-width: 21%;
-      //   // flex-basis: 50%;
-      // }
     }
     .Press--BottomSpacer {
       min-height: 0;
@@ -36,9 +25,11 @@
     }
   }
   .Press--Right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    .Press--RightInner {
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      padding-top: 33%;
+    }
   }
 }
