@@ -18,7 +18,7 @@ nav {
     &:not(:last-child) {
       @include piecewise(margin-right, 0, 8, $navBreakpoint);
       @media (min-width: $navBreakpoint) {
-        margin-right: 8px;
+        margin-right: 12px;
       }
       @media (min-width: $globalMax) {
         margin-right: 24px;

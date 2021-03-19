@@ -58,6 +58,7 @@ const SoundcloudTrack = ({
       className={`SoundcloudTrack ${
         playing && isPlaying ? 'is-active' : ''
       }`.trim()}
+      // style={{ backgroundImage: `url(${get500(artwork_url)})` }}
     >
       <div className="SoundcloudTrack--AlbumArt" style={albumArtStyle} />
       <Link className="tag" href={permalink_url}>{`#${genre}`}</Link>

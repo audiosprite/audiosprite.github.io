@@ -30,6 +30,13 @@ export default {
       url: 'https://www.twitch.tv/videos/324275712?t=06h17m26s',
     },
     {
+      quote: 'Music to do heroin to.',
+      author: 'Arthur Gies',
+      outlet: 'RebelFM',
+      url:
+        'https://rebelfm.libsyn.com/the-rebel-fm-2018-game-music-spectacular',
+    },
+    {
       quote:
         'The game’s quirky, retro-sonic soundtrack is a real treat for the ears.',
       author: 'Chris MC',

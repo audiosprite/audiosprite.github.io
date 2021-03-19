@@ -1,0 +1,17 @@
+@import '../../scss';
+
+.RebelFM {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  .RebelFM--Description {
+    font-size: 13px;
+    opacity: 0.8;
+    letter-spacing: 0.3;
+    font-style: italic;
+    line-height: 1.15;
+    .RebelFM--HREF {
+      text-decoration: underline;
+    }
+  }
+}

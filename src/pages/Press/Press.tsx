@@ -3,9 +3,11 @@ import projects from '../../data/projects';
 import { PressQuote } from '../../types';
 import { shuffle } from '../../utils/shuffle';
 import PressQuotePane from './PressQuotePane';
+import { RebelFM } from './RebelFM';
 import './Press.scss';
+import { Third } from '../../components';
 
-const outlets = ['Waypoint', 'RockPaperShotgun'];
+const outlets = ['Waypoint', 'RockPaperShotgun', 'RebelFM'];
 
 // @ts-ignore
 const sort = (a, b) => {
@@ -38,9 +40,9 @@ const allPressQuotes: PressQuote[] = shuffle(
   // @ts-ignore
 ).sort(sort);
 
-const Press = () => {
-  return (
-    <div className="Press">
+const Press = () => (
+  <div className="Press">
+    <div className="Press--Left">
       <div className="Press--TopSpacer" />
       <div className="PressQuotes">
         {allPressQuotes.map((pressquote) => (
@@ -49,7 +51,12 @@ const Press = () => {
       </div>
       <div className="Press--BottomSpacer" />
     </div>
-  );
-};
+    <div className="Press--Right">
+      <Third>
+        <RebelFM />
+      </Third>
+    </div>
+  </div>
+);
 
 export default Press;
