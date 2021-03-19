@@ -3,6 +3,9 @@ import * as React from 'react';
 export const SoundcloudContext = React.createContext({
   activeIndex: 0,
   playing: false,
+  playlist: {
+    tracks: [],
+  },
   setActiveIndex: (i: number) => {},
   soundCloudAudio: {
     audio: {

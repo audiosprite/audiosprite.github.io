@@ -8,6 +8,7 @@ import { About, Contact, Home, Press, Projects } from '../pages';
 import './App.scss';
 
 const App = (soundcloudProps: any) => {
+  // console.log(soundcloudProps);
   const [activeIndex, setActiveIndex] = React.useState(0);
   return (
     <SoundcloudContext.Provider
