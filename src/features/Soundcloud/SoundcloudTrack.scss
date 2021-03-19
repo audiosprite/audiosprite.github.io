@@ -2,7 +2,7 @@
 
 .SoundcloudTrack {
   position: relative;
-  $squareMin: 105;
+  $squareMin: 140;
   $squareMax: 200;
   @include piecewise(height, $squareMin, $squareMax);
   @include piecewise(width, $squareMin, $squareMax);

@@ -15,6 +15,7 @@ const App = (soundcloudProps: any) => {
     >
       <div className="App">
         <div className="App--Background" />
+        {/* <Noise /> */}
         <Header />
         <div className="AppBody">
           <Switch>
