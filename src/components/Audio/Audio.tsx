@@ -1,7 +1,6 @@
 import * as React from 'react';
 // @ts-ignore
 import { PlayButton } from 'react-soundplayer/components';
-import { Img } from '../Icons';
 import { imgDir } from '../../data';
 import './Audio.scss';
 
@@ -19,7 +18,6 @@ export const Audio = ({
   albumArt,
   className = '',
   size = 200,
-  //   src,
   ...rest
 }: AudioProps) => {
   const ref = React.useRef<HTMLAudioElement>();
@@ -46,11 +44,7 @@ export const Audio = ({
       {/* @ts-ignore */}
       <audio preload="auto" ref={ref} {...rest} />
       {/* {albumArt && <Img className="Audio--AlbumArt" src={albumArt} />} */}
-      <PlayButton
-        onTogglePlay={handleTogglePlay}
-        playing={playing}
-        // soundCloudAudio={soundCloudAudio}
-      />
+      <PlayButton onTogglePlay={handleTogglePlay} playing={playing} />
     </div>
   );
 };

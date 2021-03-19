@@ -11,16 +11,6 @@ const mp3src =
 const srcAtTime = `${mp3src}#t=02:58:43`;
 const srcAtTimeTalking = `${mp3src}#t=03:01:45`;
 
-const Iframe = (
-  <iframe
-    style={{ border: 'none' }}
-    src="//html5-player.libsyn.com/embed/episode/id/8039741/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/000000/"
-    height="90"
-    width="100%"
-    scrolling="no"
-  ></iframe>
-);
-
 export const RebelFM = () => (
   <div className="RebelFM">
     <Audio
