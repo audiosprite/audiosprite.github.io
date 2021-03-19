@@ -10,12 +10,14 @@
   .App--Background {
     background-color: $pink;
     animation: hueRotate infinite 40s;
-    position: absolute;
+    position: fixed;
     z-index: -1;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
   }
   .AppBody {
     flex: 1 1 auto;
