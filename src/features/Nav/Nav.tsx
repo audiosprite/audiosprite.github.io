@@ -6,6 +6,7 @@ import './Nav.scss';
 const navOptions = [
   { label: 'audio gallery', to: '/' },
   { label: 'credits', to: '/credits' },
+  { label: 'press', to: '/press' },
   { label: 'about', to: '/about' },
   { label: 'contact', to: '/contact' },
 ];

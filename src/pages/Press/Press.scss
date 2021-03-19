@@ -1,15 +1,25 @@
 .Press {
+  .Press--TopSpacer {
+    height: calc(33vh - 140px);
+  }
   .PressQuotes {
-    display: grid;
-    grid-template-columns: 100%;
-    row-gap: 14px;
-    // display: flex;
-    // flex-direction: column;
+    // display: grid;
+    // grid-template-columns: 100%;
+    // row-gap: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > *:not(:last-child) {
+      margin-bottom: 20px;
+    }
     // align-items: center;
     // flex-wrap: wrap;
     // > * {
     //   max-width: 21%;
     //   // flex-basis: 50%;
     // }
+  }
+  .Press--BottomSpacer {
+    height: calc(33vh - 70px);
   }
 }

@@ -21,11 +21,13 @@ const Press = () => {
   console.log(allPressQuotes);
   return (
     <div className="Press">
+      <div className="Press--TopSpacer" />
       <div className="PressQuotes">
         {allPressQuotes.map((pressquote) => (
           <PressQuotePane key={pressquote.quote} {...pressquote} />
         ))}
       </div>
+      <div className="Press--BottomSpacer" />
     </div>
   );
 };
