@@ -1,7 +1,8 @@
 .Press {
   display: grid !important;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, minmax(auto, 300px));
   column-gap: 48px;
+  justify-content: center;
   .Press--Left {
     display: flex;
     flex-direction: column;

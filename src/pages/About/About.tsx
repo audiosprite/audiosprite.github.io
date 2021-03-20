@@ -7,18 +7,19 @@ const bio = `John Fio is a composer (ASCAP), multi-instrumentalist, producer, ar
 
 He lives in Brooklyn, New York.`;
 
-const testBio = `
-
 // open with a quote?
-
-John Fio is a composer (ASCAP), multi-instrumentalist, producer, arranger, and audio engineer.
 
 // some music stuff here
 // history? education, work etc
 // what i like to do
 // brand yrself
 
-In 2019, he got 13th at EVO in Super Smash Bros. Melee. He lives in Brooklyn, New York.`.trim();
+const testBio = `
+John Fio is a composer (ASCAP), multi-instrumentalist, producer, arranger, and audio engineer. When he was 11, he bootleg-recorded the entire Zelda: Majora's Mask soundtrack from a CRT TV onto a cassette player. This early love of game music later drove him to study music at Rutgers in New Jersey.
+
+Since then, John has had the opportunity of contributing to a wide range of videogames, shortfilms, and games-culture programming. 
+
+In 2019, John got 13th at EVO in Super Smash Bros. Melee. He lives in Brooklyn, New York.`.trim();
 
 const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel ante mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc non ipsum semper, dapibus nisl eget, eleifend quam. Nunc pharetra risus felis, eget tempus magna dictum eget. Sed vitae purus libero. Quisque non ex justo. Maecenas ac lectus at nunc fermentum imperdiet auctor id dolor. Proin molestie risus eu felis placerat, vel tempus erat sodales. Integer gravida, elit at rutrum laoreet, est tellus euismod quam, id efficitur libero neque vel ligula.
 
