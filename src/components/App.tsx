@@ -6,6 +6,7 @@ import { SoundcloudContext } from '../hooks/useSoundcloud';
 import { Footer, Header } from '../features';
 import { About, Contact, Home, Press, Projects } from '../pages';
 import './App.scss';
+import Spacer from './Spacer';
 
 const App = (soundcloudProps: any) => {
   // console.log(soundcloudProps);
@@ -18,6 +19,7 @@ const App = (soundcloudProps: any) => {
         <div className="App--Background" />
         {/* <Noise /> */}
         <Header />
+        <Spacer spacing={81} />
         <div className="AppBody">
           <Switch>
             <Route exact path="/" component={Home} />

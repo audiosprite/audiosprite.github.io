@@ -9,7 +9,7 @@
   .About--Inner {
     // display: flex;
     display: grid;
-    grid-template-columns: repeat(2, 400px);
+    grid-template-columns: repeat(2, minmax(auto, 400px));
     column-gap: 32px;
     // max-width: 800px;
     .About--PortraitWrapper {
@@ -29,7 +29,7 @@
       justify-content: flex-start;
       .About--PortraitContent {
         position: sticky;
-        top: 60px;
+        top: 141px;
         text-align: center;
         color: $grey;
         display: flex;
