@@ -4,6 +4,11 @@ $navBreakpoint: 500;
 
 nav {
   display: flex;
+  @include piecewise(display, grid, flex, $navBreakpoint);
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  column-gap: 14px;
+  row-gap: 4px;
   @include piecewise(flex-direction, column, row, $navBreakpoint);
   @include piecewise(font-size, 15, 22);
   @media (min-width: $globalMin) {

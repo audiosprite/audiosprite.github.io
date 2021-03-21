@@ -7,6 +7,7 @@
   flex-direction: column;
   position: relative;
   background: transparent;
+  overflow-x: hidden;
   .App--Background {
     @include appBackground();
     // background-color: $pink;
