@@ -6,6 +6,7 @@ import { SoundcloudContext } from '../hooks/useSoundcloud';
 import { Footer, Header } from '../features';
 import { Spinner } from './Icons';
 import Spacer from './Spacer';
+import { Third } from '.';
 import './App.scss';
 
 const About = React.lazy(() => import('../pages/About/About'));
@@ -13,6 +14,12 @@ const Contact = React.lazy(() => import('../pages/Contact/Contact'));
 const Home = React.lazy(() => import('../pages/Home'));
 const Press = React.lazy(() => import('../pages/Press/Press'));
 const Projects = React.lazy(() => import('../pages/Projects/Projects'));
+
+const ThirdSpinner = () => (
+  <Third>
+    <Spinner />
+  </Third>
+);
 
 const App = (soundcloudProps: any) => {
   // console.log(soundcloudProps);
@@ -27,7 +34,7 @@ const App = (soundcloudProps: any) => {
         <Header />
         <Spacer spacing={81} />
         <div className="AppBody">
-          <React.Suspense fallback={<Spinner />}>
+          <React.Suspense fallback={<div />}>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/press" component={Press} />

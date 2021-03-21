@@ -53,8 +53,6 @@ const SoundcloudTrack = ({
     [artwork_url],
   );
 
-  console.log(artwork_url, `url(${get500(artwork_url)})`);
-
   return (
     <div
       className={`SoundcloudTrack ${
