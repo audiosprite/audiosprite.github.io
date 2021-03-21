@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 // @ts-ignore
 import { withSoundCloudAudio } from 'react-soundplayer/addons';
 import { SoundcloudContext } from '../hooks/useSoundcloud';
@@ -41,6 +41,7 @@ const App = (soundcloudProps: any) => {
               <Route exact path="/credits" component={Projects} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
+              <Redirect to="/" />
             </Switch>
           </React.Suspense>
         </div>
