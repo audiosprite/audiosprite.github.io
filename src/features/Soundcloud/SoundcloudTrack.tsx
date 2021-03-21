@@ -5,10 +5,10 @@ import { Link } from '../../components';
 import { SoundcloudContext } from '../../hooks/useSoundcloud';
 import './SoundcloudTrack.scss';
 
-const get500 = (url = '') => {
+const getImgSrc = (url = '', dim = 500) => {
   const index = url.lastIndexOf('large');
   const dot = url.lastIndexOf('.');
-  const url500 = `${url.substr(0, index)}t500x500${url.substr(dot)}`;
+  const url500 = `${url.substr(0, index)}t${dim}x${dim}${url.substr(dot)}`;
   return url500 && url500.includes('.') ? url500 : url;
 };
 
@@ -44,11 +44,14 @@ const SoundcloudTrack = ({
     }
   };
 
-  const albumArtStyle = React.useMemo(
+  const { imgStyle, src, srcSet } = React.useMemo(
     () => ({
-      background: `url(${get500(artwork_url)})`,
-      animationDelay: `${Math.random() * 6}s`,
-      animationDuration: `${Math.random() * 6 + 6}s`,
+      src: getImgSrc(artwork_url, 200),
+      srcSet: getImgSrc(artwork_url),
+      imgStyle: {
+        animationDelay: `${Math.random() * 6}s`,
+        animationDuration: `${Math.random() * 6 + 6}s`,
+      },
     }),
     [artwork_url],
   );
@@ -58,9 +61,11 @@ const SoundcloudTrack = ({
       className={`SoundcloudTrack ${
         playing && isPlaying ? 'is-active' : ''
       }`.trim()}
-      // style={{ backgroundImage: `url(${get500(artwork_url)})` }}
     >
-      <div className="SoundcloudTrack--AlbumArt" style={albumArtStyle} />
+      <picture>
+        <source srcSet={srcSet} media="(min-width: 568px)" />
+        <img className="SoundcloudTrack--AlbumArt" src={src} style={imgStyle} />
+      </picture>
       <Link className="tag" href={permalink_url}>{`#${genre}`}</Link>
       <PlayButton
         onTogglePlay={handlePlay}
