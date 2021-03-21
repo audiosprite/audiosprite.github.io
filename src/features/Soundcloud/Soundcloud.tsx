@@ -2,7 +2,7 @@ import * as React from 'react';
 import { SoundcloudContext } from '../../hooks/useSoundcloud';
 import SoundcloudTrack from './SoundcloudTrack';
 import './Soundcloud.scss';
-import { Img } from '../../components/Icons';
+import { Spinner } from '../../components/Icons';
 import { Third } from '../../components';
 
 const Soundcloud = () => {
@@ -18,7 +18,7 @@ const Soundcloud = () => {
         ))
       ) : (
         <Third>
-          <Img size={64} src="loading/spinner.svg" />
+          <Spinner />
         </Third>
       )}
     </div>

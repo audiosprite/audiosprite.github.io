@@ -4,9 +4,15 @@ import { Switch, Route } from 'react-router-dom';
 import { withSoundCloudAudio } from 'react-soundplayer/addons';
 import { SoundcloudContext } from '../hooks/useSoundcloud';
 import { Footer, Header } from '../features';
-import { About, Contact, Home, Press, Projects } from '../pages';
-import './App.scss';
+import { Spinner } from './Icons';
 import Spacer from './Spacer';
+import './App.scss';
+
+const About = React.lazy(() => import('../pages/About/About'));
+const Contact = React.lazy(() => import('../pages/Contact/Contact'));
+const Home = React.lazy(() => import('../pages/Home'));
+const Press = React.lazy(() => import('../pages/Press/Press'));
+const Projects = React.lazy(() => import('../pages/Projects/Projects'));
 
 const App = (soundcloudProps: any) => {
   // console.log(soundcloudProps);
@@ -21,13 +27,15 @@ const App = (soundcloudProps: any) => {
         <Header />
         <Spacer spacing={81} />
         <div className="AppBody">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/press" component={Press} />
-            <Route exact path="/credits" component={Projects} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
-          </Switch>
+          <React.Suspense fallback={<Spinner />}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/press" component={Press} />
+              <Route exact path="/credits" component={Projects} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/contact" component={Contact} />
+            </Switch>
+          </React.Suspense>
         </div>
         <Footer />
       </div>
