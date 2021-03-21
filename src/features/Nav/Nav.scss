@@ -9,6 +9,7 @@ nav {
   grid-auto-flow: column;
   column-gap: 14px;
   row-gap: 4px;
+  align-items: center;
   @include piecewise(flex-direction, column, row, $navBreakpoint);
   @include piecewise(font-size, 15, 22);
   @media (min-width: $globalMin) {

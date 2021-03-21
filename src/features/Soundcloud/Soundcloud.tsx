@@ -5,6 +5,10 @@ import './Soundcloud.scss';
 import { Spinner } from '../../components/Icons';
 import { Third } from '../../components';
 
+// https://api.soundcloud.com/resolve.json?url=https%3A%2F%2Fsoundcloud.com%2Faudiosprite%2Fsets%2Freel&client_id=9f32c400308da184e94e83dbbf3391c7
+// 303's to:
+// https://api.soundcloud.com/playlists/310569779.json?client_id=9f32c400308da184e94e83dbbf3391c7
+
 const Soundcloud = () => {
   const p = React.useContext(SoundcloudContext);
   const tracks = p?.playlist?.tracks || [];
