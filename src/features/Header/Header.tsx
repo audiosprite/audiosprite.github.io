@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Nav } from '..';
-import { Link, Spacer } from '../../components';
+import { Heading, Link, Spacer } from '../../components';
 import './Header.scss';
 
 const Header = () => (
   <header>
     <Link className="Name" hideUnderline to="/">
-      John Fio
+      <Heading>John Fio</Heading>
     </Link>
     <Spacer />
     <Nav />
