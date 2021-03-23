@@ -1,5 +1,5 @@
 {
-  "name": "spa-github-pages",
+  "name": "audiosprite",
   "version": "6.1.0",
   "private": true,
   "description": "Single Page Apps for GitHub Pages",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/rafgraph/spa-github-pages.git"
   },
-  "author": "Rafael Pedicini <rafael@rafgraph.dev>",
+  "author": "John Fio <john@audiosprite.com>",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.7.2",
@@ -63,5 +63,6 @@
   },
   "lint-staged": {
     "src/**/*": "prettier --write --ignore-unknown"
-  }
+  },
+  "sideEffects": false
 }
