@@ -65,7 +65,7 @@ const SoundcloudTrack = ({
       }`.trim()}
     >
       <picture>
-        <source srcSet={srcSet} media="(min-width: 568px)" />
+        <source srcSet={srcSet} media="(min-width: 800px)" />
         <img
           alt={title}
           className="SoundcloudTrack--AlbumArt"
