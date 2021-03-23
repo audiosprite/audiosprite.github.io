@@ -17,6 +17,7 @@ type SoundcloudTrackProps = {
   genre: string;
   permalink_url: string;
   playlistIndex: number;
+  title: string;
 };
 
 const SoundcloudTrack = ({
@@ -24,6 +25,7 @@ const SoundcloudTrack = ({
   genre,
   permalink_url,
   playlistIndex,
+  title,
 }: SoundcloudTrackProps) => {
   const {
     activeIndex,
@@ -64,7 +66,12 @@ const SoundcloudTrack = ({
     >
       <picture>
         <source srcSet={srcSet} media="(min-width: 568px)" />
-        <img className="SoundcloudTrack--AlbumArt" src={src} style={imgStyle} />
+        <img
+          alt={title}
+          className="SoundcloudTrack--AlbumArt"
+          src={src}
+          style={imgStyle}
+        />
       </picture>
       <Link className="tag" href={permalink_url}>{`#${genre}`}</Link>
       <PlayButton

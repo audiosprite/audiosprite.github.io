@@ -35,7 +35,11 @@ const About = () => (
     <div className="About--Inner">
       <div className="About--PortraitWrapper">
         <div className="About--PortraitContent">
-          <Img className="About--Portrait" src="photos/portrait-emi.jpg" />
+          <Img
+            alt="John Fio"
+            className="About--Portrait"
+            src="photos/portrait-emi.jpg"
+          />
           <Spacer />
           <div>
             photo © <Link href="https://www.uglymachine.net/">Emi Spicer</Link>

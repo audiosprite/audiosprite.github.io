@@ -9,15 +9,13 @@ type StoreProps = {
   size?: number;
 };
 
-const SocialIcon = ({ name, size = 24 }: StoreProps) => {
-  return (
-    <img
-      alt={name}
-      className="Store"
-      src={`${socialImgDir}${name.toLowerCase()}.svg`}
-      style={{ height: size, width: size }}
-    />
-  );
-};
+const SocialIcon = ({ name, size = 24 }: StoreProps) => (
+  <img
+    alt={name}
+    className="Store"
+    src={`${socialImgDir}${name.toLowerCase()}.svg`}
+    style={{ height: size, width: size }}
+  />
+);
 
 export default SocialIcon;

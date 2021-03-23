@@ -16,6 +16,7 @@ const Store = ({ name, size = 16 }: StoreProps) => {
     : storeImgDir;
   return (
     <img
+      alt={name}
       className="Store"
       src={`${directory}${name.toLowerCase()}.svg`}
       style={{ height: size, width: size }}
