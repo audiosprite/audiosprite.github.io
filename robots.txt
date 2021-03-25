@@ -1,3 +1,3 @@
-Sitemap: http://audiosprite.com/sitemap.txt
+Sitemap: http://johnf.io/sitemap.txt
 User-agent: *
 Disallow:
