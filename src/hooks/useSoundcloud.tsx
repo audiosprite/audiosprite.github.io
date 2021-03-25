@@ -17,3 +17,5 @@ export const SoundcloudContext = React.createContext({
     _playlist: { tracks: [] },
   },
 });
+
+export const useSoundcloud = () => React.useContext(SoundcloudContext);
