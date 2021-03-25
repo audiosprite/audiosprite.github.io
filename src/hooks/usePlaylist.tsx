@@ -26,29 +26,35 @@ export const usePlaylist = () => React.useContext(PlaylistContext);
 
 // @ts-ignore
 const usePlaylistProvider = ({ apiTracks }) => {
-  const [currentIndex] = React.useState(0);
-  const [isPlaying] = React.useState(false);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const [isPlaying, setIsPlaying] = React.useState(false);
   const [tracks, setTracks] = React.useState([]);
 
   React.useEffect(() => {
-    console.log('api tracks', apiTracks);
-    setTracks(
-      (apiTracks || []).map(
-        // @ts-ignore
-        ({ artwork_url, genre, permalink_url, playlistIndex, title }) => ({
-          artwork_url,
-          genre,
-          permalink_url,
-          playlistIndex,
-          title,
-        }),
-      ),
-    );
+    if (apiTracks?.length)
+      setTracks(
+        (apiTracks || []).map(
+          // @ts-ignore
+          ({ artwork_url, genre, permalink_url, playlistIndex, title }) => ({
+            artwork_url,
+            genre,
+            permalink_url,
+            playlistIndex,
+            title,
+          }),
+        ),
+      );
   }, [apiTracks]);
 
-  const onBack = () => {};
-  const onForward = () => {};
-  const onPlayPause = () => {};
+  const onBack = () => {
+    setCurrentIndex((currentIndex) => Math.max(0, currentIndex - 1));
+  };
+  const onForward = () => {
+    setCurrentIndex((currentIndex) => (currentIndex + 1) % (tracks.length - 1));
+  };
+  const onPlayPause = () => {
+    setIsPlaying((isPlaying) => !isPlaying);
+  };
 
   return { currentIndex, isPlaying, onBack, onForward, onPlayPause, tracks };
 };
