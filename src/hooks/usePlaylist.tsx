@@ -1,10 +1,20 @@
 import * as React from 'react';
 
-type PlaylistTrack = {
+type ApiPlaylistTrack = {
   artwork_url: string;
   genre: string;
   permalink_url: string;
   playlistIndex: number;
+  stream_url: string;
+  title: string;
+};
+
+type PlaylistTrack = {
+  artworkUrl: string;
+  genre: string;
+  permalinkUrl: string;
+  playlistIndex: number;
+  streamUrl: string;
   title: string;
 };
 
@@ -19,27 +29,37 @@ type PlaylistContextType = {
 
 export const PlaylistContext = React.createContext({
   currentIndex: 0,
-  tracks: [],
+  tracks: [] as PlaylistTrack[],
 });
 
 export const usePlaylist = () => React.useContext(PlaylistContext);
 
-// @ts-ignore
-const usePlaylistProvider = ({ apiTracks }) => {
+const usePlaylistProvider = ({
+  apiTracks,
+}: {
+  apiTracks: ApiPlaylistTrack[];
+}): PlaylistContextType => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isPlaying, setIsPlaying] = React.useState(false);
-  const [tracks, setTracks] = React.useState([]);
+  const [tracks, setTracks] = React.useState<PlaylistTrack[]>([]);
 
   React.useEffect(() => {
     if (apiTracks?.length)
       setTracks(
-        (apiTracks || []).map(
-          // @ts-ignore
-          ({ artwork_url, genre, permalink_url, playlistIndex, title }) => ({
+        apiTracks.map(
+          ({
             artwork_url,
             genre,
             permalink_url,
             playlistIndex,
+            stream_url,
+            title,
+          }: ApiPlaylistTrack) => ({
+            artworkUrl: artwork_url,
+            genre,
+            permalinkUrl: permalink_url,
+            playlistIndex,
+            streamUrl: stream_url,
             title,
           }),
         ),
