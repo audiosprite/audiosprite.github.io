@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Soundcloud } from '../features';
+import { Playlist, Soundcloud } from '../features';
 
 const Home = () => {
   return (
     <div className="Home">
-      <Soundcloud />
+      {/* <Soundcloud /> */}
+      <Playlist />
     </div>
   );
 };

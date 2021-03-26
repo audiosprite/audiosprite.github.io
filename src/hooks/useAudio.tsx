@@ -1,10 +1,14 @@
-// @ts-nocheck
+import * as React from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import React, { useEffect, useRef, useState } from 'react';
+type Buffered = {
+  start: number;
+  end: number;
+};
 
 // https://dev.to/nicomartin/how-to-create-a-progressive-audio-player-with-react-hooks-31l1
 
-const parseTimeRange = (ranges) =>
+const parseTimeRange: (ranges: any) => Buffered = (ranges) =>
   ranges.length < 1
     ? {
         start: 0,
@@ -15,8 +19,28 @@ const parseTimeRange = (ranges) =>
         end: ranges.end(0),
       };
 
-const useAudio = ({ src, autoPlay = false, startPlaybackRate = 1 }) => {
-  const [state, setOrgState] = useState({
+type useAudioProps = {
+  autoPlay: boolean;
+  src: string;
+  startPlaybackRate: number;
+};
+
+type useAudioState = {
+  buffered: Buffered;
+  time: number;
+  duration: number;
+  paused: boolean;
+  waiting: boolean;
+  playbackRate: number;
+  endedCallback: null | (() => void);
+};
+
+const useAudio = ({
+  src,
+  autoPlay = false,
+  startPlaybackRate = 1,
+}: useAudioProps) => {
+  const [state, setOrgState] = useState<useAudioState>({
     buffered: {
       start: 0,
       end: 0,
@@ -28,8 +52,9 @@ const useAudio = ({ src, autoPlay = false, startPlaybackRate = 1 }) => {
     playbackRate: 1,
     endedCallback: null,
   });
-  const setState = (partState) => setOrgState({ ...state, ...partState });
-  const ref = useRef(null);
+  const setState = (partState: Partial<useAudioState>) =>
+    setOrgState({ ...state, ...partState });
+  const ref = useRef<HTMLAudioElement>(null);
 
   const element = React.createElement('audio', {
     src,
@@ -98,7 +123,7 @@ const useAudio = ({ src, autoPlay = false, startPlaybackRate = 1 }) => {
         return el.pause();
       }
     },
-    seek: (time) => {
+    seek: (time: number) => {
       const el = ref.current;
       if (!el || state.duration === undefined) {
         return;
@@ -106,7 +131,7 @@ const useAudio = ({ src, autoPlay = false, startPlaybackRate = 1 }) => {
       time = Math.min(state.duration, Math.max(0, time));
       el.currentTime = time || 0;
     },
-    setPlaybackRate: (rate) => {
+    setPlaybackRate: (rate: number) => {
       const el = ref.current;
       if (!el || state.duration === undefined) {
         return;
@@ -117,7 +142,7 @@ const useAudio = ({ src, autoPlay = false, startPlaybackRate = 1 }) => {
       });
       el.playbackRate = rate;
     },
-    setEndedCallback: (callback) => {
+    setEndedCallback: (callback: () => void) => {
       setState({ endedCallback: callback });
     },
   };
@@ -125,12 +150,12 @@ const useAudio = ({ src, autoPlay = false, startPlaybackRate = 1 }) => {
   useEffect(() => {
     const el = ref.current;
     setState({
-      paused: el.paused,
+      paused: el?.paused,
     });
 
     controls.setPlaybackRate(startPlaybackRate);
 
-    if (autoPlay && el.paused) {
+    if (autoPlay && el?.paused) {
       controls.play();
     }
   }, [src]);

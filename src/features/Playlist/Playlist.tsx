@@ -7,8 +7,10 @@ const Playlist = () => {
     <div>
       {tracks.map((track) => (
         <audio
+          controls
+          key={track.streamUrl}
           src={
-            track.streamUrl ||
+            `${track.streamUrl}?client_id=9f32c400308da184e94e83dbbf3391c7` ||
             'https://api.soundcloud.com/tracks/507496875/stream?client_id=9f32c400308da184e94e83dbbf3391c7'
           }
         />
