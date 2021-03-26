@@ -81,15 +81,19 @@ export const Audio = ({
 };
 
 const styles = {
-  backgroundDiv: (useLargeImages: boolean, artworkUrl: string) => ({
-    backgroundImage: useLargeImages
-      ? `url(${getSoundcloudArt(artworkUrl, 200)})`
-      : `url(${getSoundcloudArt(artworkUrl, 500)})`,
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    backgroundSize: 'cover',
-  }),
+  backgroundDiv: (useLargeImages: boolean, artworkUrl: string) =>
+    ({
+      backgroundImage: useLargeImages
+        ? `url(${getSoundcloudArt(artworkUrl, 200)})`
+        : `url(${getSoundcloudArt(artworkUrl, 500)})`,
+      width: '100%',
+      height: '100%',
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      backgroundSize: 'cover',
+    } as React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLDivElement>,
+      HTMLDivElement
+    >),
 };
