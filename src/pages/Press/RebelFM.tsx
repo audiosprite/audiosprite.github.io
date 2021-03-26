@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Audio, Link, Spacer } from '../../components';
+import { AudioOld, Link, Spacer } from '../../components';
 import './RebelFM.scss';
 
 const src =
@@ -13,7 +13,7 @@ const srcAtTimeTalking = `${mp3src}#t=03:01:45`;
 
 export const RebelFM = () => (
   <div className="RebelFM">
-    <Audio
+    <AudioOld
       albumArt={'press/rebelfm-spectacular-250.jpeg'}
       src={srcAtTimeTalking}
     />

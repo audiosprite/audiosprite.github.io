@@ -9,7 +9,7 @@ type ApiPlaylistTrack = {
   title: string;
 };
 
-type PlaylistTrack = {
+export type PlaylistTrack = {
   artworkUrl: string;
   genre: string;
   permalinkUrl: string;

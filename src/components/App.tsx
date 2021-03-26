@@ -24,11 +24,10 @@ const ThirdSpinner = () => (
 );
 
 const App = (soundcloudProps: any) => {
-  // console.log(soundcloudProps);
   const { data } = useData(
     'https://api.soundcloud.com/playlists/310569779.json?client_id=9f32c400308da184e94e83dbbf3391c7',
   );
-  console.log(data);
+  // console.log(data);
   const [activeIndex, setActiveIndex] = React.useState(0);
   return (
     // @ts-ignore

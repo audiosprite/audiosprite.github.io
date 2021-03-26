@@ -1,4 +1,5 @@
 export { Audio } from './Audio/Audio';
+export { AudioOld } from './Audio.old/AudioOld';
 export { default as Button } from './Button/Button';
 export { default as Heading } from './Heading/Heading';
 export { default as Link } from './Link/Link';

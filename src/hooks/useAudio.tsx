@@ -20,9 +20,9 @@ const parseTimeRange: (ranges: any) => Buffered = (ranges) =>
       };
 
 type useAudioProps = {
-  autoPlay: boolean;
+  autoPlay?: boolean;
   src: string;
-  startPlaybackRate: number;
+  startPlaybackRate?: number;
 };
 
 type useAudioState = {
