@@ -84,8 +84,8 @@ const styles = {
   backgroundDiv: (useLargeImages: boolean, artworkUrl: string) =>
     ({
       backgroundImage: useLargeImages
-        ? `url(${getSoundcloudArt(artworkUrl, 200)})`
-        : `url(${getSoundcloudArt(artworkUrl, 500)})`,
+        ? `url(${getSoundcloudArt(artworkUrl, 500)})`
+        : `url(${getSoundcloudArt(artworkUrl, 200)})`,
       width: '100%',
       height: '100%',
       position: 'absolute',
