@@ -18,6 +18,11 @@ export const AudioProgress = ({
 }: AudioProgressProps) => {
   const [hoverRef, showTime] = useHover();
   const [hoverTime, setHoverTime] = React.useState<string>();
+  const [
+    hoverTimeStyle,
+    setHoverTimeStyle,
+  ] = React.useState<React.CSSProperties>({});
+  const hoverTimeRef = React.useRef<HTMLDivElement>(null);
 
   const handleSeekTrack = (e: React.MouseEvent<HTMLDivElement>) => {
     const xPos =
@@ -36,11 +41,22 @@ export const AudioProgress = ({
   );
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    // console.log(e, e.nativeEvent.offsetX, e.target?.offsetWidth);
-    setHoverTime(
-      // @ts-ignore
-      numToTime((e.nativeEvent.offsetX / e.target?.offsetWidth) * duration),
-    );
+    // @ts-ignore
+    const percentage = e.nativeEvent.offsetX / e.target?.offsetWidth;
+    setHoverTime(numToTime(percentage * duration));
+
+    const anchor =
+      percentage > 0.85 ? 'right' : percentage < 0.15 ? 'left' : 'center';
+
+    let displacement = 0;
+    if (anchor === 'center')
+      displacement = (hoverTimeRef.current?.offsetWidth || 0) / 2;
+    else if (anchor === 'right')
+      displacement = Number(hoverTimeRef.current?.offsetWidth);
+
+    setHoverTimeStyle({
+      transform: `translateX(${e.nativeEvent.offsetX - displacement}px)`,
+    });
   };
 
   return (
@@ -51,7 +67,15 @@ export const AudioProgress = ({
       // @ts-ignore
       ref={hoverRef}
     >
-      {showTime && <div className="AudioProgress-HoverTime">{hoverTime}</div>}
+      {showTime && (
+        <div
+          className="AudioProgress-HoverTime"
+          ref={hoverTimeRef}
+          style={hoverTimeStyle}
+        >
+          {hoverTime}
+        </div>
+      )}
       <div className="AudioProgress-Inner" style={innerStyle} />
     </div>
   );
