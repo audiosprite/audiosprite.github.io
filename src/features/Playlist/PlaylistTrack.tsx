@@ -29,6 +29,9 @@ const PlaylistTrack = ({
     if (!isCurrentIndex && !state.paused) {
       controls.pause();
     }
+    if (isCurrentIndex && state.paused) {
+      controls.play();
+    }
   }, [isCurrentIndex]);
 
   const handlePlay = () => {

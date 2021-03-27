@@ -20,8 +20,6 @@ export const AudioProgress = ({
       e.currentTarget.offsetWidth;
 
     onSeek(xPos * duration);
-
-    // onSeekTrack && onSeekTrack.call(this, xPos, e);
   };
 
   const innerStyle = React.useMemo(

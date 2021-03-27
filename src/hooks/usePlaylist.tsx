@@ -21,7 +21,7 @@ export type PlaylistTrack = {
 };
 
 type PlaylistContextType = {
-  currentIndex: number;
+  currentIndex: number | null;
   isPlaying: boolean;
   onBack: () => void;
   onEnded: (i: number) => void;
@@ -32,7 +32,7 @@ type PlaylistContextType = {
 };
 
 export const PlaylistContext = React.createContext({
-  currentIndex: 0,
+  currentIndex: null,
   onBack: noop,
   onEnded: noop,
   onForward: noop,
@@ -48,7 +48,7 @@ const usePlaylistProvider = ({
 }: {
   apiTracks: ApiPlaylistTrack[];
 }): PlaylistContextType => {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const [currentIndex, setCurrentIndex] = React.useState<number | null>(null);
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [tracks, setTracks] = React.useState<PlaylistTrack[]>([]);
 
@@ -79,16 +79,18 @@ const usePlaylistProvider = ({
   }, [apiTracks]);
 
   const onBack = () => {
-    setCurrentIndex((currentIndex) => Math.max(0, currentIndex - 1));
+    setCurrentIndex((currentIndex) => Math.max(0, Number(currentIndex) - 1));
   };
   const onForward = () => {
-    setCurrentIndex((currentIndex) => (currentIndex + 1) % (tracks.length - 1));
+    setCurrentIndex(
+      (currentIndex) => (Number(currentIndex) + 1) % (tracks.length - 1),
+    );
   };
   const onPlayPause = () => {
     setIsPlaying((isPlaying) => !isPlaying);
   };
   const onEnded = (i: number) => {
-    console.log(i, 'ended');
+    onForward();
   };
 
   // https://api.soundcloud.com/tracks/507496875/stream?client_id=9f32c400308da184e94e83dbbf3391c7
