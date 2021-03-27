@@ -27,6 +27,7 @@ type PlaylistContextType = {
   onEnded: (i: number) => void;
   onForward: () => void;
   onPlayPause: () => void;
+  onSetCurrentIndex: (i: number) => void;
   tracks: PlaylistTrack[];
 };
 
@@ -36,6 +37,7 @@ export const PlaylistContext = React.createContext({
   onEnded: noop,
   onForward: noop,
   onPlayPause: noop,
+  onSetCurrentIndex: noop,
   tracks: [] as PlaylistTrack[],
 });
 
@@ -98,6 +100,7 @@ const usePlaylistProvider = ({
     onEnded,
     onForward,
     onPlayPause,
+    onSetCurrentIndex: setCurrentIndex,
     tracks,
   };
 };

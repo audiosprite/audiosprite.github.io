@@ -4,7 +4,12 @@ import PlaylistTrack from './PlaylistTrack';
 import './Playlist.scss';
 
 const Playlist = () => {
-  const { currentIndex, onEnded, tracks = [] } = usePlaylist();
+  const {
+    currentIndex,
+    onEnded,
+    onSetCurrentIndex,
+    tracks = [],
+  } = usePlaylist();
   return (
     <div className="Playlist">
       {tracks.map((track) => (
@@ -13,6 +18,7 @@ const Playlist = () => {
           {...track}
           isCurrentIndex={currentIndex === track.playlistIndex}
           onEnded={onEnded}
+          onSetCurrentIndex={onSetCurrentIndex}
         />
       ))}
     </div>

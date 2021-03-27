@@ -6,11 +6,13 @@ import { Audio } from '../../components';
 type PlaylistTrackProps = PlaylistTrackType & {
   isCurrentIndex: boolean;
   onEnded: (i: number) => void;
+  onSetCurrentIndex: (i: number) => void;
 };
 
 const PlaylistTrack = ({
   isCurrentIndex,
   onEnded,
+  onSetCurrentIndex,
   ...track
 }: PlaylistTrackProps) => {
   const { element, state, controls } = useAudio({
@@ -23,22 +25,20 @@ const PlaylistTrack = ({
     });
   }, []);
 
-  // React.useEffect(() => {
-  //   if (!isCurrentIndex && !state.paused) {
-  //     controls.pause();
-  //   }
-  // }, [isCurrentIndex, state.paused]);
+  React.useEffect(() => {
+    if (!isCurrentIndex && !state.paused) {
+      controls.pause();
+    }
+  }, [isCurrentIndex]);
 
   const handlePlay = () => {
     controls.play();
+    if (!isCurrentIndex) onSetCurrentIndex(track.playlistIndex);
   };
 
   const handlePause = () => {
     controls.pause();
   };
-
-  // const handleTogglePlay = () =>
-  //   state.paused ? controls.play() : controls.pause();
 
   return (
     <>
@@ -53,7 +53,6 @@ const PlaylistTrack = ({
         onPause={handlePause}
         onPlay={handlePlay}
         onSeek={controls.seek}
-        // onTogglePlay={handleTogglePlay}
         time={state.time}
       />
     </>
