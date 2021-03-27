@@ -1,5 +1,7 @@
 @import '../../scss';
 
+$pressQuotesBp: 500px;
+
 .PressQuotePane {
   justify-self: center;
   align-self: center;
@@ -10,6 +12,7 @@
   .PressQuotePane--Quote {
     font-style: italic;
     font-size: 23px;
+    @include piecewise(font-size, 20, 23, $pressQuotesBp);
     margin-bottom: 2px;
   }
   .PressQuotePane--Right {

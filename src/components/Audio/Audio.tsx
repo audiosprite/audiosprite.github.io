@@ -37,8 +37,10 @@ export const Audio = ({
       className={`Audio ${className}`.trim()}
       style={{
         backgroundImage: `url(${imgDir}${albumArt})`,
+        maxHeight: size,
+        maxWidth: size,
         height: size,
-        width: size,
+        width: '100%',
       }}
     >
       {/* @ts-ignore */}
