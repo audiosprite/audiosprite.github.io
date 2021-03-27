@@ -8,7 +8,7 @@ table.ProjectsTable {
   tr {
     td {
       font-size: 20px;
-      padding: 4px 2px;
+      padding: 4px;
       vertical-align: middle;
       @include piecewise(font-size, 15, 20);
       @media (min-width: $globalMin) {
