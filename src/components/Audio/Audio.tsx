@@ -15,7 +15,6 @@ interface AudioProps {
   onPause: () => void;
   onPlay: () => void;
   onSeek: (timestamp: number) => void;
-  // onTogglePlay: () => void;
   permalinkUrl: string;
   time: number;
   title: string;
@@ -30,7 +29,6 @@ export const Audio = ({
   onPause,
   onPlay,
   onSeek,
-  // onTogglePlay,
   permalinkUrl,
   time,
   title,

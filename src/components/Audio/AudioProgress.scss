@@ -6,7 +6,17 @@
   z-index: 2;
   height: 10px;
   width: 100%;
+  &:hover {
+    .AudioProgress-HoverTime {
+      display: block;
+    }
+  }
+  .AudioProgress-HoverTime {
+    position: absolute;
+    bottom: calc(100% + 5px);
+  }
   .AudioProgress-Inner {
+    display: none;
     height: 10px;
     background-color: orange;
     transform-origin: left;
