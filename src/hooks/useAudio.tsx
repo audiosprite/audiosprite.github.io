@@ -36,8 +36,8 @@ type useAudioState = {
 };
 
 const useAudio = ({
-  src,
   autoPlay = false,
+  src,
   startPlaybackRate = 1,
 }: useAudioProps) => {
   const [state, setOrgState] = useState<useAudioState>({

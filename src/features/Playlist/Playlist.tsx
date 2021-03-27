@@ -4,11 +4,16 @@ import PlaylistTrack from './PlaylistTrack';
 import './Playlist.scss';
 
 const Playlist = () => {
-  const { tracks = [] } = usePlaylist();
+  const { currentIndex, onEnded, tracks = [] } = usePlaylist();
   return (
     <div className="Playlist">
       {tracks.map((track) => (
-        <PlaylistTrack key={track.streamUrl} {...track} />
+        <PlaylistTrack
+          key={track.streamUrl}
+          {...track}
+          isCurrentIndex={currentIndex === track.playlistIndex}
+          onEnded={onEnded}
+        />
       ))}
     </div>
   );

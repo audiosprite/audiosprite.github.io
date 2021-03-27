@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+const noop = () => {};
+
 type ApiPlaylistTrack = {
   artwork_url: string;
   genre: string;
@@ -22,6 +24,7 @@ type PlaylistContextType = {
   currentIndex: number;
   isPlaying: boolean;
   onBack: () => void;
+  onEnded: (i: number) => void;
   onForward: () => void;
   onPlayPause: () => void;
   tracks: PlaylistTrack[];
@@ -29,6 +32,10 @@ type PlaylistContextType = {
 
 export const PlaylistContext = React.createContext({
   currentIndex: 0,
+  onBack: noop,
+  onEnded: noop,
+  onForward: noop,
+  onPlayPause: noop,
   tracks: [] as PlaylistTrack[],
 });
 
@@ -78,10 +85,21 @@ const usePlaylistProvider = ({
   const onPlayPause = () => {
     setIsPlaying((isPlaying) => !isPlaying);
   };
+  const onEnded = (i: number) => {
+    console.log(i, 'ended');
+  };
 
   // https://api.soundcloud.com/tracks/507496875/stream?client_id=9f32c400308da184e94e83dbbf3391c7
 
-  return { currentIndex, isPlaying, onBack, onForward, onPlayPause, tracks };
+  return {
+    currentIndex,
+    isPlaying,
+    onBack,
+    onEnded,
+    onForward,
+    onPlayPause,
+    tracks,
+  };
 };
 
 type PlaylistProviderProps = {

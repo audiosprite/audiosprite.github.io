@@ -3,27 +3,36 @@ import * as React from 'react';
 import { PlayButton } from 'react-soundplayer/components';
 import { getSoundcloudArt } from '../../utils';
 import Link from '../Link/Link';
+import { AudioProgress } from './AudioProgress';
 import './Audio.scss';
 
 interface AudioProps {
   artworkUrl?: string;
   className?: string;
+  duration: number;
   genre?: string;
   isPlaying: boolean;
-  onTogglePlay: () => void;
+  onPause: () => void;
+  onPlay: () => void;
+  onSeek: (timestamp: number) => void;
+  // onTogglePlay: () => void;
   permalinkUrl: string;
-  size?: number;
+  time: number;
   title: string;
 }
 
 export const Audio = ({
   artworkUrl,
   className = '',
+  duration,
   genre,
   isPlaying,
-  onTogglePlay,
+  onPause,
+  onPlay,
+  onSeek,
+  // onTogglePlay,
   permalinkUrl,
-  size = 200,
+  time,
   title,
 }: AudioProps) => {
   const { imgStyle, src, srcSet } = React.useMemo(
@@ -37,8 +46,15 @@ export const Audio = ({
     }),
     [artworkUrl],
   );
+
+  const handleTogglePlay = () => {
+    isPlaying ? onPause() : onPlay();
+  };
+
   return (
-    <div className={`Audio ${isPlaying ? 'is-active' : ''}`.trim()}>
+    <div
+      className={`Audio ${isPlaying ? 'is-active' : ''} ${className}`.trim()}
+    >
       <picture>
         <source srcSet={srcSet} media="(min-width: 800px)" />
         <img
@@ -48,27 +64,9 @@ export const Audio = ({
           style={imgStyle}
         />
       </picture>
-      {/* <div style={styles.backgroundDiv(useLargeImages, artworkUrl || '')} /> */}
       {genre && <Link className="tag" href={permalinkUrl}>{`#${genre}`}</Link>}
-      <PlayButton onTogglePlay={onTogglePlay} playing={isPlaying} />
+      <PlayButton onTogglePlay={handleTogglePlay} playing={isPlaying} />
+      <AudioProgress duration={duration} onSeek={onSeek} time={time} />
     </div>
   );
 };
-
-// const styles = {
-//   backgroundDiv: (useLargeImages: boolean, artworkUrl: string) =>
-//     ({
-//       backgroundImage: useLargeImages
-//         ? `url(${getSoundcloudArt(artworkUrl, 500)})`
-//         : `url(${getSoundcloudArt(artworkUrl, 200)})`,
-//       width: '100%',
-//       height: '100%',
-//       position: 'absolute',
-//       left: 0,
-//       top: 0,
-//       backgroundSize: 'cover',
-//     } as React.DetailedHTMLProps<
-//       React.HTMLAttributes<HTMLDivElement>,
-//       HTMLDivElement
-//     >),
-// };

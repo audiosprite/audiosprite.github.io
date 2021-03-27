@@ -1,0 +1,14 @@
+.AudioProgress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 10px;
+  width: 100%;
+  .AudioProgress-Inner {
+    height: 10px;
+    background-color: orange;
+    transform-origin: left;
+  }
+}
