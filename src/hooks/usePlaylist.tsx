@@ -47,18 +47,21 @@ const usePlaylistProvider = ({
     if (apiTracks?.length)
       setTracks(
         apiTracks.map(
-          ({
-            artwork_url,
-            genre,
-            permalink_url,
-            playlistIndex,
-            stream_url,
-            title,
-          }: ApiPlaylistTrack) => ({
+          (
+            {
+              artwork_url,
+              genre,
+              permalink_url,
+              playlistIndex,
+              stream_url,
+              title,
+            }: ApiPlaylistTrack,
+            i,
+          ) => ({
             artworkUrl: artwork_url,
             genre,
             permalinkUrl: permalink_url,
-            playlistIndex,
+            playlistIndex: i,
             streamUrl: stream_url,
             title,
           }),
