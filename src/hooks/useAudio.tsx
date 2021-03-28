@@ -59,7 +59,7 @@ const useAudio = ({
   const element = React.createElement('audio', {
     src,
     controls: false,
-    // preload: 'none',
+    preload: 'none',
     ref,
     onPlay: () => setState({ paused: false }),
     onPause: () => setState({ paused: true }),

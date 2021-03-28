@@ -1,28 +1,24 @@
 import * as React from 'react';
-import { PlaylistTrack as PlaylistTrackType } from '../../hooks/usePlaylist';
+import {
+  PlaylistTrack as PlaylistTrackType,
+  usePlaylist,
+} from '../../hooks/usePlaylist';
 import useAudio from '../../hooks/useAudio';
 import { Audio } from '../../components';
 
 type PlaylistTrackProps = PlaylistTrackType & {
   isCurrentIndex: boolean;
-  onEnded: (i: number) => void;
-  onSetCurrentIndex: (i: number) => void;
 };
 
-const PlaylistTrack = ({
-  isCurrentIndex,
-  onEnded,
-  onSetCurrentIndex,
-  ...track
-}: PlaylistTrackProps) => {
+const PlaylistTrack = ({ isCurrentIndex, ...track }: PlaylistTrackProps) => {
+  const { onEnded, onSetIsPlaying, onSetCurrentIndex } = usePlaylist();
+
   const { element, state, controls } = useAudio({
     src: `${track.streamUrl}?client_id=9f32c400308da184e94e83dbbf3391c7`,
   });
 
   React.useEffect(() => {
-    controls.setEndedCallback(() => {
-      onEnded(track.playlistIndex);
-    });
+    controls.setEndedCallback(onEnded);
   }, []);
 
   React.useEffect(() => {
@@ -36,11 +32,16 @@ const PlaylistTrack = ({
 
   const handlePlay = () => {
     controls.play();
+    // @ts-ignore
     if (!isCurrentIndex) onSetCurrentIndex(track.playlistIndex);
+    // @ts-ignore
+    onSetIsPlaying(true);
   };
 
   const handlePause = () => {
     controls.pause();
+    // @ts-ignore
+    onSetIsPlaying(false);
   };
 
   return (

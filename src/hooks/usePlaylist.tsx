@@ -24,10 +24,11 @@ type PlaylistContextType = {
   currentIndex: number | null;
   isPlaying: boolean;
   onBack: () => void;
-  onEnded: (i: number) => void;
+  onEnded: () => void;
   onForward: () => void;
   onPlayPause: () => void;
-  onSetCurrentIndex: (i: number) => void;
+  onSetCurrentIndex: React.Dispatch<React.SetStateAction<number | null>>;
+  onSetIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
   tracks: PlaylistTrack[];
 };
 
@@ -38,6 +39,7 @@ export const PlaylistContext = React.createContext({
   onForward: noop,
   onPlayPause: noop,
   onSetCurrentIndex: noop,
+  onSetIsPlaying: noop,
   tracks: [] as PlaylistTrack[],
 });
 
@@ -89,7 +91,7 @@ const usePlaylistProvider = ({
   const onPlayPause = () => {
     setIsPlaying((isPlaying) => !isPlaying);
   };
-  const onEnded = (i: number) => {
+  const onEnded = () => {
     onForward();
   };
 
@@ -103,6 +105,7 @@ const usePlaylistProvider = ({
     onForward,
     onPlayPause,
     onSetCurrentIndex: setCurrentIndex,
+    onSetIsPlaying: setIsPlaying,
     tracks,
   };
 };
