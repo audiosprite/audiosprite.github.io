@@ -35,6 +35,17 @@ type useAudioState = {
   endedCallback: null | (() => void);
 };
 
+type Audio = {
+  controls: {
+    play: () => Promise<void> | undefined;
+    pause: () => void;
+    seek: (time: number) => void;
+    setPlaybackRate: (rate: number) => void;
+    setEndedCallback: (callback: () => void) => void;
+  };
+  state: useAudioState;
+};
+
 const useAudio = ({
   autoPlay = false,
   src,
@@ -150,9 +161,7 @@ const useAudio = ({
 
   useEffect(() => {
     const el = ref.current;
-    setState({
-      paused: el?.paused,
-    });
+    setState({ paused: el?.paused });
 
     controls.setPlaybackRate(startPlaybackRate);
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
-
-const noop = () => {};
+import { noop } from '../utils';
+import useAudio from './useAudio';
 
 type ApiPlaylistTrack = {
   artwork_url: string;
@@ -20,7 +20,29 @@ export type PlaylistTrack = {
   title: string;
 };
 
+const mapApiTracksToTracks = (apiTracks: ApiPlaylistTrack[]) =>
+  apiTracks.map(
+    (
+      {
+        artwork_url,
+        genre,
+        permalink_url, // playlistIndex,
+        stream_url,
+        title,
+      }: ApiPlaylistTrack,
+      i,
+    ) => ({
+      artworkUrl: artwork_url,
+      genre,
+      permalinkUrl: permalink_url,
+      playlistIndex: i,
+      streamUrl: stream_url,
+      title,
+    }),
+  ) as PlaylistTrack[];
+
 type PlaylistContextType = {
+  audio?: any;
   currentIndex: number | null;
   isPlaying: boolean;
   onBack: () => void;
@@ -34,6 +56,7 @@ type PlaylistContextType = {
 
 export const PlaylistContext = React.createContext({
   currentIndex: null,
+  isPlaying: false,
   onBack: noop,
   onEnded: noop,
   onForward: noop,
@@ -43,7 +66,8 @@ export const PlaylistContext = React.createContext({
   tracks: [] as PlaylistTrack[],
 });
 
-export const usePlaylist = () => React.useContext(PlaylistContext);
+export const usePlaylist: () => PlaylistContextType = () =>
+  React.useContext(PlaylistContext);
 
 const usePlaylistProvider = ({
   apiTracks,
@@ -54,30 +78,17 @@ const usePlaylistProvider = ({
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [tracks, setTracks] = React.useState<PlaylistTrack[]>([]);
 
+  const src = React.useMemo(
+    () =>
+      `${
+        tracks.length && currentIndex ? tracks[currentIndex].streamUrl : ''
+      }?client_id=9f32c400308da184e94e83dbbf3391c7`,
+    [tracks, currentIndex],
+  );
+  const audio = useAudio({ src });
+
   React.useEffect(() => {
-    if (apiTracks?.length)
-      setTracks(
-        apiTracks.map(
-          (
-            {
-              artwork_url,
-              genre,
-              permalink_url,
-              playlistIndex,
-              stream_url,
-              title,
-            }: ApiPlaylistTrack,
-            i,
-          ) => ({
-            artworkUrl: artwork_url,
-            genre,
-            permalinkUrl: permalink_url,
-            playlistIndex: i,
-            streamUrl: stream_url,
-            title,
-          }),
-        ),
-      );
+    if (apiTracks?.length) setTracks(mapApiTracksToTracks(apiTracks));
   }, [apiTracks]);
 
   const onBack = () => {
@@ -95,9 +106,8 @@ const usePlaylistProvider = ({
     onForward();
   };
 
-  // https://api.soundcloud.com/tracks/507496875/stream?client_id=9f32c400308da184e94e83dbbf3391c7
-
   return {
+    audio,
     currentIndex,
     isPlaying,
     onBack,
@@ -119,9 +129,12 @@ export const PlaylistProvider: React.FC<PlaylistProviderProps> = ({
   apiTracks,
 }) => {
   const value = usePlaylistProvider({ apiTracks });
+  console.log(value);
+
   return (
     // @ts-ignore
     <PlaylistContext.Provider value={value}>
+      {value?.audio?.element}
       {children}
     </PlaylistContext.Provider>
   );

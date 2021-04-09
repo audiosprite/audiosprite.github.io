@@ -9,6 +9,7 @@ import { Spinner } from './Icons';
 import Spacer from './Spacer';
 import { Third } from '.';
 import { PlaylistProvider } from '../hooks/usePlaylist';
+import { TestButton } from './TestButton';
 import './App.scss';
 
 const About = React.lazy(() => import('../pages/About/About'));
@@ -41,6 +42,8 @@ const App = (soundcloudProps: any) => {
           <Header />
           <Spacer spacing={81} />
           <div className="AppBody">
+            <TestButton />
+
             <React.Suspense fallback={<div />}>
               <Switch>
                 <Route exact path="/" component={Home} />
