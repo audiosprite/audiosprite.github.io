@@ -9,7 +9,6 @@ import { Spinner } from './Icons';
 import Spacer from './Spacer';
 import { Third } from '.';
 import { PlaylistProvider } from '../hooks/usePlaylist';
-import { TestButton } from './TestButton';
 import './App.scss';
 
 const About = React.lazy(() => import('../pages/About/About'));
@@ -18,11 +17,11 @@ const Home = React.lazy(() => import('../pages/Home'));
 const Press = React.lazy(() => import('../pages/Press/Press'));
 const Projects = React.lazy(() => import('../pages/Projects/Projects'));
 
-const ThirdSpinner = () => (
-  <Third>
-    <Spinner />
-  </Third>
-);
+// const ThirdSpinner = () => (
+//   <Third>
+//     <Spinner />
+//   </Third>
+// );
 
 const App = (soundcloudProps: any) => {
   const { data } = useData(
@@ -42,8 +41,6 @@ const App = (soundcloudProps: any) => {
           <Header />
           <Spacer spacing={81} />
           <div className="AppBody">
-            <TestButton />
-
             <React.Suspense fallback={<div />}>
               <Switch>
                 <Route exact path="/" component={Home} />

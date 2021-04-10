@@ -3,63 +3,36 @@ import {
   PlaylistTrack as PlaylistTrackType,
   usePlaylist,
 } from '../../hooks/usePlaylist';
-import useAudio from '../../hooks/useAudio';
 import { Audio } from '../../components';
 
-type PlaylistTrackProps = PlaylistTrackType & {
-  isCurrentIndex: boolean;
-};
+type PlaylistTrackProps = PlaylistTrackType;
 
-const PlaylistTrack = ({ isCurrentIndex, ...track }: PlaylistTrackProps) => {
-  const { onEnded, onSetIsPlaying, onSetCurrentIndex } = usePlaylist();
+const PlaylistTrack = (track: PlaylistTrackProps) => {
+  const { audio, currentIndex, isPlaying, onPlayPause, onSeek } = usePlaylist();
 
-  const { element, state, controls } = useAudio({
-    src: `${track.streamUrl}?client_id=9f32c400308da184e94e83dbbf3391c7`,
-  });
-
-  React.useEffect(() => {
-    controls.setEndedCallback(onEnded);
-  }, []);
-
-  React.useEffect(() => {
-    if (!isCurrentIndex && !state.paused) {
-      controls.pause();
-    }
-    if (isCurrentIndex && state.paused) {
-      controls.play();
-    }
-  }, [isCurrentIndex]);
-
-  const handlePlay = () => {
-    controls.play();
-    // @ts-ignore
-    if (!isCurrentIndex) onSetCurrentIndex(track.playlistIndex);
-    // @ts-ignore
-    onSetIsPlaying(true);
+  const handlePlayPause = () => {
+    onPlayPause(track.playlistIndex);
   };
 
-  const handlePause = () => {
-    controls.pause();
-    // @ts-ignore
-    onSetIsPlaying(false);
+  const trackIsPlaying = isPlaying && currentIndex === track.playlistIndex;
+
+  const handleSeek = (timestamp: number) => {
+    onSeek(track.playlistIndex, timestamp);
   };
 
   return (
-    <>
-      {element}
-      <Audio
-        artworkUrl={track.artworkUrl}
-        duration={state.duration}
-        genre={track.genre}
-        isPlaying={state.paused === false}
-        title={track.title}
-        permalinkUrl={track.permalinkUrl}
-        onPause={handlePause}
-        onPlay={handlePlay}
-        onSeek={controls.seek}
-        time={state.time}
-      />
-    </>
+    <Audio
+      artworkUrl={track.artworkUrl}
+      duration={track.duration}
+      genre={track.genre}
+      isPlaying={trackIsPlaying}
+      title={track.title}
+      permalinkUrl={track.permalinkUrl}
+      onPause={handlePlayPause}
+      onPlay={handlePlayPause}
+      onSeek={handleSeek}
+      time={trackIsPlaying ? audio?.state.time || 0 : 0}
+    />
   );
 };
 

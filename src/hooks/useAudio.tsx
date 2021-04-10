@@ -8,7 +8,7 @@ type Buffered = {
 
 // https://dev.to/nicomartin/how-to-create-a-progressive-audio-player-with-react-hooks-31l1
 
-const parseTimeRange: (ranges: any) => Buffered = (ranges) =>
+const parseTimeRange: (ranges: TimeRanges) => Buffered = (ranges) =>
   ranges.length < 1
     ? {
         start: 0,
@@ -46,26 +46,32 @@ type Audio = {
   state: useAudioState;
 };
 
+const initialAudioState = {
+  buffered: {
+    start: 0,
+    end: 0,
+  },
+  time: 0,
+  duration: 0,
+  paused: true,
+  waiting: false,
+  playbackRate: 1,
+  endedCallback: null,
+};
+
 const useAudio = ({
   autoPlay = false,
   src,
   startPlaybackRate = 1,
 }: useAudioProps) => {
-  const [state, setOrgState] = useState<useAudioState>({
-    buffered: {
-      start: 0,
-      end: 0,
-    },
-    time: 0,
-    duration: 0,
-    paused: true,
-    waiting: false,
-    playbackRate: 1,
-    endedCallback: null,
-  });
+  const [state, setOrgState] = useState<useAudioState>(initialAudioState);
   const setState = (partState: Partial<useAudioState>) =>
     setOrgState({ ...state, ...partState });
   const ref = useRef<HTMLAudioElement>(null);
+
+  // React.useEffect(() => {
+  //   setOrgState(initialAudioState);
+  // }, [src]);
 
   const element = React.createElement('audio', {
     src,
@@ -166,9 +172,9 @@ const useAudio = ({
     controls.setPlaybackRate(startPlaybackRate);
 
     if (autoPlay && el?.paused) {
-      controls.play();
+      controls.play(); // eslint-disable-line @typescript-eslint/no-floating-promises
     }
-  }, [src]);
+  }, [src]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return { element, state, controls };
 };
