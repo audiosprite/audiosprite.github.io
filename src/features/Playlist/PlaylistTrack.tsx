@@ -7,31 +7,44 @@ import { Audio } from '../../components';
 
 type PlaylistTrackProps = PlaylistTrackType;
 
-const PlaylistTrack = (track: PlaylistTrackProps) => {
-  const { audio, currentIndex, isPlaying, onPlayPause, onSeek } = usePlaylist();
+const PlaylistTrack = ({
+  artworkUrl,
+  duration,
+  genre,
+  permalinkUrl,
+  playlistIndex,
+  title,
+}: PlaylistTrackProps) => {
+  const {
+    currentIndex,
+    currentTime,
+    isPlaying,
+    onPlayPause,
+    onSeek,
+  } = usePlaylist();
 
   const handlePlayPause = () => {
-    onPlayPause(track.playlistIndex);
+    onPlayPause(playlistIndex);
   };
 
-  const trackIsPlaying = isPlaying && currentIndex === track.playlistIndex;
+  const trackIsPlaying = isPlaying && currentIndex === playlistIndex;
 
   const handleSeek = (timestamp: number) => {
-    onSeek(track.playlistIndex, timestamp);
+    onSeek(playlistIndex, timestamp);
   };
 
   return (
     <Audio
-      artworkUrl={track.artworkUrl}
-      duration={track.duration}
-      genre={track.genre}
+      artworkUrl={artworkUrl}
+      duration={duration}
+      genre={genre}
       isPlaying={trackIsPlaying}
-      title={track.title}
-      permalinkUrl={track.permalinkUrl}
+      permalinkUrl={permalinkUrl}
       onPause={handlePlayPause}
       onPlay={handlePlayPause}
       onSeek={handleSeek}
-      time={trackIsPlaying ? audio?.state.time || 0 : 0}
+      time={trackIsPlaying ? currentTime : 0}
+      title={title}
     />
   );
 };

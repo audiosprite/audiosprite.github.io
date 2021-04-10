@@ -48,6 +48,8 @@ const mapApiTracksToTracks = (apiTracks: ApiPlaylistTrack[]) =>
 type PlaylistContextType = {
   audio?: any;
   currentIndex: number | null;
+  currentTime: number;
+  element?: any;
   isPlaying: boolean;
   onBack: () => void;
   onEnded: () => void;
@@ -59,6 +61,7 @@ type PlaylistContextType = {
 
 export const PlaylistContext = React.createContext({
   currentIndex: null,
+  currentTime: 0,
   isPlaying: false,
   onBack: noop,
   onEnded: noop,
@@ -85,8 +88,15 @@ const usePlaylistProvider = ({
   }?client_id=9f32c400308da184e94e83dbbf3391c7`;
   const audio = useAudio({ src });
   const { controls, state } = audio;
-
   const isPlaying = !state.paused;
+
+  React.useEffect(() => {
+    controls.setEndedCallback(onEnded);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  React.useEffect(() => {
+    if (apiTracks?.length) setTracks(mapApiTracksToTracks(apiTracks));
+  }, [apiTracks]);
 
   React.useEffect(() => {
     if (currentIndex !== null) controls.play();
@@ -133,17 +143,10 @@ const usePlaylistProvider = ({
     controls.seek(time);
   };
 
-  React.useEffect(() => {
-    controls.setEndedCallback(onEnded);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  React.useEffect(() => {
-    if (apiTracks?.length) setTracks(mapApiTracksToTracks(apiTracks));
-  }, [apiTracks]);
-
   return {
-    audio,
     currentIndex,
+    currentTime: audio?.state.time || 0,
+    element: audio?.element,
     isPlaying,
     onBack,
     onEnded,
@@ -162,13 +165,13 @@ export const PlaylistProvider: React.FC<PlaylistProviderProps> = ({
   children,
   apiTracks,
 }) => {
-  const value = usePlaylistProvider({ apiTracks });
+  const { element, ...value } = usePlaylistProvider({ apiTracks });
   console.log(value);
 
   return (
     // @ts-ignore
     <PlaylistContext.Provider value={value}>
-      {value.audio?.element}
+      {element}
       {children}
     </PlaylistContext.Provider>
   );
