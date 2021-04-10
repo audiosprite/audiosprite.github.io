@@ -1,6 +1,5 @@
 import * as React from 'react';
 // @ts-ignore
-import { Progress as RSProgress } from 'react-soundplayer/components';
 import { SoundcloudContext } from '../../hooks/useSoundcloud';
 import './Progress.scss';
 
@@ -11,7 +10,6 @@ const Progress = () => {
 
   return (
     <div className="Progress">
-      <RSProgress soundCloudAudio={soundCloudAudio} value={percentage} />
       {/* <div
         className="Progress--Meter"
         style={{

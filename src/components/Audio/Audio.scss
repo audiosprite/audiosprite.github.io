@@ -89,22 +89,15 @@
       text-decoration: underline;
     }
   }
-  .sb-soundplayer-play-btn {
+  .Audio--PlayButton {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    svg {
+    img {
       fill: $white;
       opacity: 0.6;
-      height: auto;
-      width: 30px;
       transition: 150ms ease-out;
     }
   }

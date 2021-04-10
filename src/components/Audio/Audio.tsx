@@ -1,6 +1,5 @@
 import * as React from 'react';
-// @ts-ignore
-import { PlayButton } from 'react-soundplayer/components';
+import { PlayButton } from '../PlayButton/PlayButton';
 import { getSoundcloudArt } from '../../utils';
 import Link from '../Link/Link';
 import { AudioProgress } from './AudioProgress';
@@ -20,7 +19,7 @@ interface AudioProps {
   title: string;
 }
 
-export const Audio = ({
+export const Audio: React.FC<AudioProps> = ({
   artworkUrl,
   className = '',
   duration,
@@ -32,7 +31,7 @@ export const Audio = ({
   permalinkUrl,
   time,
   title,
-}: AudioProps) => {
+}) => {
   const { imgStyle, src, srcSet } = React.useMemo(
     () => ({
       src: getSoundcloudArt(artworkUrl, 200),
@@ -63,7 +62,11 @@ export const Audio = ({
         />
       </picture>
       {genre && <Link className="tag" href={permalinkUrl}>{`#${genre}`}</Link>}
-      <PlayButton onTogglePlay={handleTogglePlay} playing={isPlaying} />
+      <PlayButton
+        className="Audio--PlayButton"
+        onTogglePlay={handleTogglePlay}
+        playing={isPlaying}
+      />
       <AudioProgress duration={duration} onSeek={onSeek} time={time} />
     </div>
   );
