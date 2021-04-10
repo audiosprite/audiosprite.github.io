@@ -46,9 +46,10 @@ export const AudioProgress = ({
     setHoverTime(numToTime(percentage * duration));
 
     const anchor =
-      percentage > 0.85 ? 'right' : percentage < 0.15 ? 'left' : 'center';
+      percentage > 0.9 ? 'right' : percentage < 0.1 ? 'left' : 'center';
 
-    let displacement = 0;
+    let displacement =
+      e.nativeEvent.offsetX - (hoverTimeRef.current?.offsetWidth || 0) / 2;
     if (anchor === 'center')
       displacement = (hoverTimeRef.current?.offsetWidth || 0) / 2;
     else if (anchor === 'right')

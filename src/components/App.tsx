@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 // @ts-ignore
-import { withSoundCloudAudio } from 'react-soundplayer/addons';
 import { useData } from '../hooks';
-import { SoundcloudContext } from '../hooks/useSoundcloud';
 import { Footer, Header } from '../features';
 import { Spinner } from './Icons';
 import Spacer from './Spacer';
@@ -23,7 +21,7 @@ const Projects = React.lazy(() => import('../pages/Projects/Projects'));
 //   </Third>
 // );
 
-const App = (soundcloudProps: any) => {
+const App = () => {
   const { data } = useData(
     'https://api.soundcloud.com/playlists/310569779.json?client_id=9f32c400308da184e94e83dbbf3391c7',
   );
@@ -32,31 +30,27 @@ const App = (soundcloudProps: any) => {
   return (
     // @ts-ignore
     <PlaylistProvider apiTracks={data?.tracks}>
-      <SoundcloudContext.Provider
-        value={{ ...soundcloudProps, activeIndex, setActiveIndex }}
-      >
-        <div className="App">
-          <div className="App--Background" />
-          {/* <Noise /> */}
-          <Header />
-          <Spacer spacing={81} />
-          <div className="AppBody">
-            <React.Suspense fallback={<div />}>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/press" component={Press} />
-                <Route exact path="/credits" component={Projects} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/contact" component={Contact} />
-                <Redirect to="/" />
-              </Switch>
-            </React.Suspense>
-          </div>
-          <Footer />
+      <div className="App">
+        <div className="App--Background" />
+        {/* <Noise /> */}
+        <Header />
+        <Spacer spacing={81} />
+        <div className="AppBody">
+          <React.Suspense fallback={<div />}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/press" component={Press} />
+              <Route exact path="/credits" component={Projects} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/contact" component={Contact} />
+              <Redirect to="/" />
+            </Switch>
+          </React.Suspense>
         </div>
-      </SoundcloudContext.Provider>
+        <Footer />
+      </div>
     </PlaylistProvider>
   );
 };
 
-export default withSoundCloudAudio(App);
+export default App;

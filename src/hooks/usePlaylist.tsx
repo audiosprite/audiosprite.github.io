@@ -166,7 +166,6 @@ export const PlaylistProvider: React.FC<PlaylistProviderProps> = ({
   apiTracks,
 }) => {
   const { element, ...value } = usePlaylistProvider({ apiTracks });
-  console.log(value);
 
   return (
     // @ts-ignore
