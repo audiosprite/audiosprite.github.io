@@ -1,6 +1,6 @@
 import * as React from 'react';
 // @ts-ignore
-import { PlayButton } from 'react-soundplayer/components';
+import { PlayButton } from '../PlayButton/PlayButton';
 import { imgDir } from '../../data';
 import './Audio.scss';
 
@@ -44,7 +44,11 @@ export const AudioOld = ({
       {/* @ts-ignore */}
       <audio preload="auto" ref={ref} {...rest} />
       {/* {albumArt && <Img className="Audio--AlbumArt" src={albumArt} />} */}
-      <PlayButton onTogglePlay={handleTogglePlay} playing={playing} />
+      <PlayButton
+        className="AudioOld--PlayButton"
+        onTogglePlay={handleTogglePlay}
+        playing={playing}
+      />
     </div>
   );
 };
