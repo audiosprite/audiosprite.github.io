@@ -1,4 +1,13 @@
 import * as React from 'react';
+import {
+  createContext,
+  FC,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import { Amplitude } from '../amplitude/amplitude';
 import { noop } from '../utils';
 import useAudio from './useAudio';
 
@@ -59,7 +68,7 @@ type PlaylistContextType = {
   tracks: PlaylistTrack[];
 };
 
-export const PlaylistContext = React.createContext({
+export const PlaylistContext = createContext({
   currentIndex: null,
   currentTime: 0,
   isPlaying: false,
@@ -72,16 +81,16 @@ export const PlaylistContext = React.createContext({
 });
 
 export const usePlaylist: () => PlaylistContextType = () =>
-  React.useContext(PlaylistContext);
+  useContext(PlaylistContext);
 
 const usePlaylistProvider = ({
   apiTracks,
 }: {
   apiTracks: ApiPlaylistTrack[];
 }): PlaylistContextType => {
-  const [tracks, setTracks] = React.useState<PlaylistTrack[]>([]);
-  const [currentIndex, setCurrentIndex] = React.useState<number | null>(null);
-  const [toSeekTime, setToSeekTime] = React.useState<number>();
+  const [tracks, setTracks] = useState<PlaylistTrack[]>([]);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [toSeekTime, setToSeekTime] = useState<number>();
 
   const src = `${
     tracks.length ? tracks[currentIndex || 0].streamUrl : ''
@@ -90,30 +99,30 @@ const usePlaylistProvider = ({
   const { controls, state } = audio;
   const isPlaying = !state.paused;
 
-  React.useEffect(() => {
+  useEffect(() => {
     controls.setEndedCallback(onEnded);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (apiTracks?.length) setTracks(mapApiTracksToTracks(apiTracks));
   }, [apiTracks]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (currentIndex !== null) controls.play();
   }, [currentIndex]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (toSeekTime) {
       controls.seek(toSeekTime);
       setToSeekTime(undefined);
     }
   }, [toSeekTime]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const onBack = React.useCallback(() => {
+  const onBack = useCallback(() => {
     setCurrentIndex((currentIndex) => Math.max(0, Number(currentIndex) - 1));
   }, []);
 
-  const onForward = React.useCallback(() => {
+  const onForward = useCallback(() => {
     setCurrentIndex(
       (currentIndex) => (Number(currentIndex) + 1) % (tracks.length - 1),
     );
@@ -124,6 +133,14 @@ const usePlaylistProvider = ({
       if (newCurrentIndex === currentIndex) {
         controls[isPlaying ? 'pause' : 'play']();
       } else {
+        Amplitude.logEvent(
+          'selectTrack',
+          (({ genre, playlistIndex, title }) => ({
+            genre,
+            playlistIndex,
+            title,
+          }))(tracks[newCurrentIndex]),
+        );
         setCurrentIndex(newCurrentIndex);
       }
     } else {
@@ -131,7 +148,7 @@ const usePlaylistProvider = ({
     }
   };
 
-  const onEnded = React.useCallback(() => {
+  const onEnded = useCallback(() => {
     onForward();
   }, [onForward]);
 
@@ -161,7 +178,7 @@ type PlaylistProviderProps = {
   apiTracks: [];
 };
 
-export const PlaylistProvider: React.FC<PlaylistProviderProps> = ({
+export const PlaylistProvider: FC<PlaylistProviderProps> = ({
   children,
   apiTracks,
 }) => {
