@@ -25,6 +25,7 @@ const Projects = lazy(() => import('../pages/Projects/Projects'));
 const App: FC<Record<string, unknown>> = () => {
   useEffect(() => {
     Amplitude.logEvent('init');
+    console.log(process.env.NODE_ENV);
   }, []);
 
   const { data } = useData(

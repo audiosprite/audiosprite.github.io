@@ -20,7 +20,9 @@ class AmplitudeClass {
   }
 
   logEvent = (eventKey: keyof AmplitudeEventsMap, eventValue?: any) => {
-    this.amplitudeClient.logEvent(amplitudeEvents[eventKey], eventValue);
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`[Amplitude] ${amplitudeEvents[eventKey]}`, eventValue || '');
+    } else this.amplitudeClient.logEvent(amplitudeEvents[eventKey], eventValue);
   };
 }
 
