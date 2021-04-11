@@ -23,7 +23,10 @@ const Projects = lazy(() => import('../pages/Projects/Projects'));
 // );
 
 const App: FC<Record<string, unknown>> = () => {
-  Amplitude.logEvent('init');
+  useEffect(() => {
+    Amplitude.logEvent('init');
+  }, []);
+
   const { data } = useData(
     'https://api.soundcloud.com/playlists/310569779.json?client_id=9f32c400308da184e94e83dbbf3391c7',
   );
