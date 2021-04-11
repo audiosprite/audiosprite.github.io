@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
+import { Amplitude } from '../../amplitude/amplitude';
 import './Link.scss';
 
 type LinkProps = {
@@ -17,14 +18,17 @@ const Link: React.FC<LinkProps> = ({
   to,
 }) => {
   const Component = to ? ReactRouterLink : href ? 'a' : 'div';
+  const onClick = () => {
+    if (href) Amplitude.logEvent('navigateExternal', href);
+  };
   return (
-    // @ts-ignore
     <Component
       className={`Link ${className} ${
         hideUnderline ? 'hideUnderline' : ''
       }`.trim()}
       {...(Component === ReactRouterLink ? { to } : {})}
       {...(Component === 'a' ? { href, target: '__blank' } : {})}
+      onClick={onClick}
     >
       {children}
     </Component>

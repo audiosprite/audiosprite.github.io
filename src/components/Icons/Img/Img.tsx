@@ -9,7 +9,7 @@ type ImgProps = {
   size?: number;
 };
 
-const Img = ({ alt, className = '', src, size }: ImgProps) => (
+const Img: React.FC<ImgProps> = ({ alt, className = '', src, size }) => (
   <img
     alt={alt}
     className={`Img ${className}`.trim()}

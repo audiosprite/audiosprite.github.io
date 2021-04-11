@@ -23,15 +23,15 @@ const Projects = lazy(() => import('../pages/Projects/Projects'));
 // );
 
 const App: FC<Record<string, unknown>> = () => {
+  const { pathname } = useLocation();
   useEffect(() => {
-    Amplitude.logEvent('init');
+    Amplitude.logEvent('init', { pathname });
   }, []);
 
   const { data } = useData(
     'https://api.soundcloud.com/playlists/310569779.json?client_id=9f32c400308da184e94e83dbbf3391c7',
   );
 
-  const { pathname } = useLocation();
   const isFirstUpdate = useRef(true);
   useEffect(() => {
     if (isFirstUpdate.current) {

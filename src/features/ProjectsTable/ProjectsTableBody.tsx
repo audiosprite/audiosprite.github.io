@@ -10,10 +10,10 @@ type ProjectsTableBodyProps = {
   projects: Project[];
 };
 
-const ProjectsTableBody = ({
+const ProjectsTableBody: React.FC<ProjectsTableBodyProps> = ({
   columns,
   projects = [],
-}: ProjectsTableBodyProps) => (
+}) => (
   <tbody className="ProjectsTableBody">
     {projects.map(
       ({
