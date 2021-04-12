@@ -1,4 +1,6 @@
+const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
+const UnusedWebpackPlugin = require('unused-webpack-plugin');
 // const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
@@ -13,6 +15,12 @@ module.exports = {
   devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
 
   // plugins: [new CompressionPlugin()],
+  plugins: [
+    new UnusedWebpackPlugin({
+      directories: [path.join(__dirname, 'src')],
+      root: __dirname,
+    }),
+  ],
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],

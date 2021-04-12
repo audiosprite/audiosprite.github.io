@@ -1,20 +1,15 @@
 import * as React from 'react';
-import { FC, lazy, Suspense, useEffect, useRef } from 'react';
+import { FC, Suspense, useEffect, useRef } from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { useData } from '../hooks';
 import { Footer, Header } from '../features';
+import { About, Contact, Home, Press, Projects } from '../pages';
 // import { Spinner } from './Icons';
 import Spacer from './Spacer';
 // import { Third } from '.';
 import { PlaylistProvider } from '../hooks/usePlaylist';
 import { Amplitude } from '../amplitude/amplitude';
 import './App.scss';
-
-const About = lazy(() => import('../pages/About/About'));
-const Contact = lazy(() => import('../pages/Contact/Contact'));
-const Home = lazy(() => import('../pages/Home'));
-const Press = lazy(() => import('../pages/Press/Press'));
-const Projects = lazy(() => import('../pages/Projects/Projects'));
 
 // const ThirdSpinner = () => (
 //   <Third>
@@ -26,7 +21,7 @@ const App: FC<Record<string, unknown>> = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     Amplitude.logEvent('init', { pathname });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const { data } = useData(
     'https://api.soundcloud.com/playlists/310569779.json?client_id=9f32c400308da184e94e83dbbf3391c7',

@@ -1,5 +1,7 @@
-export { default as About } from './About/About';
-export { default as Contact } from './Contact/Contact';
-export { default as Home } from './Home';
-export { default as Press } from './Press/Press';
-export { default as Projects } from './Projects/Projects';
+import { lazy } from 'react';
+
+export const About = lazy(() => import('./About/About'));
+export const Contact = lazy(() => import('./Contact/Contact'));
+export const Home = lazy(() => import('./Home'));
+export const Press = lazy(() => import('./Press/Press'));
+export const Projects = lazy(() => import('./Projects/Projects'));
