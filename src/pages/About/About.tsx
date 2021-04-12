@@ -21,7 +21,7 @@ When John was 11, he bootleg-recorded the entire <i>Zelda: Majora's Mask</i> sou
 
 Since then, John has had the opportunity of contributing original music to a <a href="/credits">wide range of videogames, shortfilms, and games-culture programming</a>. He also acts as a music curator for indie game venue <a href="https://www.wonderville.nyc/">Wonderville</a> in Bushwick, NYC.
 
-In 2019, John placed 13th at EVO in <i>Super Smash Bros. Melee</i>. He lives in Brooklyn, New York.`.trim();
+In 2019, John placed 13<sup>th</sup> at EVO in <i>Super Smash Bros. Melee</i>. He lives in Brooklyn, New York.`.trim();
 
 const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel ante mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc non ipsum semper, dapibus nisl eget, eleifend quam. Nunc pharetra risus felis, eget tempus magna dictum eget. Sed vitae purus libero. Quisque non ex justo. Maecenas ac lectus at nunc fermentum imperdiet auctor id dolor. Proin molestie risus eu felis placerat, vel tempus erat sodales. Integer gravida, elit at rutrum laoreet, est tellus euismod quam, id efficitur libero neque vel ligula.
 

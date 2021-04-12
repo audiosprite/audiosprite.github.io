@@ -138,3 +138,7 @@ strong {
 i {
   font-style: italic;
 }
+sup {
+  vertical-align: super;
+  font-size: x-small;
+}
