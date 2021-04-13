@@ -2,7 +2,7 @@
 
 // CONTENT
 export const siteName = 'John Fio | Composer';
-export const email = 'john@audiosprite.com';
+export const email = 'john@johnf.io';
 
 export const instagramHandle = 'audiosprite';
 export const twitterHandle = 'audiosprite';
