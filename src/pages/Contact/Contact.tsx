@@ -6,15 +6,21 @@ import { Social } from '../../features';
 import './Contact.scss';
 
 const Contact: React.FC<Record<string, unknown>> = () => {
+  const [emailHasBeenClicked, setEmailHasBeenClicked] = React.useState(false);
   const handleClickEmail = () => {
-    Amplitude.logEvent('emailClicked');
+    if (!emailHasBeenClicked) {
+      Amplitude.logEvent('emailClicked');
+      setEmailHasBeenClicked(true);
+    }
   };
   return (
     <div className="Contact">
       <Third>
         <div className="Contact--Content">
           {/* eslint-disable-next-line */}
-          <div onClick={handleClickEmail}>{email}</div>
+          <div className="Contact--EmailText" onClick={handleClickEmail}>
+            {email}
+          </div>
           <Spacer spacing={20} />
           <Social />
         </div>
