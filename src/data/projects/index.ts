@@ -7,6 +7,7 @@ import ilivelikethis from './ilivelikethis';
 import kungfukickball from './kungfukickball';
 import magesandmurderdads from './magesandmurderdads';
 import mangoman from './mangoman';
+import pumpkin from './pumpkin';
 import rollcontrol from './rollcontrol';
 import rollforcrit from './rollforcrit';
 import skatestory from './skatestory';
@@ -20,6 +21,7 @@ const projects: Project[] = [
   kungfukickball,
   ilivelikethis,
   wholesomeslaughter,
+  pumpkin,
   rollcontrol,
   swordcoastcoast2coast,
   supercrome,
