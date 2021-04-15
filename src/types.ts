@@ -14,6 +14,7 @@ export enum Genre {
   eleki = 'Eleki',
   funk = 'Funk',
   grunge = 'Grunge',
+  hawaiian = 'Hawaiian',
   house = 'House',
   jazz = 'Jazz',
   library = 'Library',

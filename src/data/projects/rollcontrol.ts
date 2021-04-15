@@ -1,28 +1,15 @@
-import {
-  StoreName,
-  ProjectType,
-  MusicStoreName,
-  Role,
-  Genre,
-} from '../../types';
+import { StoreName, ProjectType, Role, Genre } from '../../types';
 
 export default {
   developer: {
     name: 'Andrew Simon Thomas LLC',
-    // url: 'https://josephgribbin.itch.io/',
+    url: 'https://andrewsimonthomas.work/',
   },
-  // genrePool: [[Genre['chiptune']]],
+  genrePool: [[Genre['hawaiian']]],
   name: 'Roll Control',
   type: ProjectType['game'],
   releaseDate: new Date('May 18, 2020'),
   roles: [Role['music']],
-  // selectTracks: [],
-  // musicStores: [
-  //   {
-  //     name: MusicStoreName["bandcamp"],
-  //     url: "https://audiosprite.bandcamp.com/album/kungfu-kickball",
-  //   },
-  // ],
   stores: [
     {
       name: StoreName['steam'],

@@ -10,6 +10,7 @@ import mangoman from './mangoman';
 import pumpkin from './pumpkin';
 import rollcontrol from './rollcontrol';
 import rollforcrit from './rollforcrit';
+import shillelagh from './shillelagh';
 import skatestory from './skatestory';
 import supercrome from './supercrome';
 import swordcoastcoast2coast from './swordcoastcoast2coast';
@@ -18,6 +19,7 @@ import zarvot from './zarvot';
 
 const projects: Project[] = [
   skatestory,
+  shillelagh,
   kungfukickball,
   ilivelikethis,
   wholesomeslaughter,
