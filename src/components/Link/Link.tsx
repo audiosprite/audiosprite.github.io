@@ -19,7 +19,7 @@ const Link: React.FC<LinkProps> = ({
 }) => {
   const Component = to ? ReactRouterLink : href ? 'a' : 'div';
   const onClick = () => {
-    if (href) Amplitude.logEvent('navigateExternal', href);
+    if (href) Amplitude.logEvent('navigateExternal', { href });
   };
   return (
     <Component
