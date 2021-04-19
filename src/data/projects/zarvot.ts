@@ -82,8 +82,10 @@ export default {
       url: 'http://www.vgchartz.com/article/393011/zarvot-ns/',
     },
     {
+      // quote:
+      //   'I do not often start a review talking about the artistic aspects, but it is undeniable that immediately you are taken by a soundtrack of the highest level that mixes jazz with electronic sounds, ambient, hip-hop, funk and even rock, perfectly emphasizing the action onscreen...',
       quote:
-        'I do not often start a review talking about the artistic aspects, but it is undeniable that immediately you are taken by a soundtrack of the highest level that mixes jazz with electronic sounds, ambient, hip-hop, funk and even rock, perfectly emphasizing the action onscreen...',
+        'It is undeniable that immediately you are taken by a soundtrack of the highest level that mixes jazz with electronic sounds, ambient, hip-hop, funk and even rock, perfectly emphasizing the action onscreen...',
       author: 'Marco Disarò',
       outlet: 'Switch Italia',
       url: 'http://www.switchitalia.it/2018/10/22/zarvot/',
