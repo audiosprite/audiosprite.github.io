@@ -23,6 +23,18 @@ export default {
     [Genre['metal'], Genre['orchestral'], Genre['disco'], Genre['doom']],
   ],
   name: 'KungFu Kickball',
+  pressQuotes: [
+    {
+      // quote:
+      //   'From the moment you open the main menu, you’ll feel like you’re in a somber training session like in The Karate Kid or Ip Man, and the tracks continue bangers from there. The Temple arena theme is very fast-paced, with some saxophone and jazz vibes, and even the character select screen has its own theme, filled with funky bass guitar and twanky electric guitar riffs. This is a really fun soundtrack to listen to, and while it certainly has vibes from kungfu or martial arts movies, it also brings a new style and flavor into the mix for an awesome experience.',
+      // quote: 'From the moment you open the main menu, you’ll feel like you’re in a somber training session like in The Karate Kid or Ip Man, and the tracks continue bangers from there',
+      quote:
+        'From the moment you open the main menu, you’ll feel like you’re in a somber training session like in The Karate Kid or Ip Man, and the tracks continue bangers from there... This is a really fun soundtrack to listen to, and while it certainly has vibes from kungfu or martial arts movies, it also brings a new style and flavor into the mix for an awesome experience.',
+      author: 'Cody',
+      outlet: 'IndieGamesPulse',
+      url: 'https://www.youtube.com/watch?v=WsB-HXEER6M',
+    },
+  ],
   publisher: {
     name: 'Blowfish Studios',
     url: 'https://www.blowfishstudios.com/',
