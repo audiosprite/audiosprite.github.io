@@ -1,5 +1,6 @@
 import { Project } from '../../types';
 
+import acetennis64 from './acetennis64';
 import bentobanana from './bentobanana';
 import eatshitanddie from './eatshitanddie';
 import epanalepsis from './epanalepsis';
@@ -33,6 +34,7 @@ const projects: Project[] = [
   zarvot,
   rollforcrit,
   mangoman,
+  acetennis64,
   epanalepsis,
 ];
 
