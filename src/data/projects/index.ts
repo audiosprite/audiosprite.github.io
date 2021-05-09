@@ -5,6 +5,7 @@ import bentobanana from './bentobanana';
 import eatshitanddie from './eatshitanddie';
 import epanalepsis from './epanalepsis';
 import ilivelikethis from './ilivelikethis';
+import intothedarknarakan from './intothedarknarakan';
 import kungfukickball from './kungfukickball';
 import magesandmurderdads from './magesandmurderdads';
 import mangoman from './mangoman';
@@ -30,6 +31,7 @@ const projects: Project[] = [
   supercrome,
   eatshitanddie,
   bentobanana,
+  intothedarknarakan,
   magesandmurderdads,
   zarvot,
   rollforcrit,

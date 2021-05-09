@@ -39,13 +39,15 @@ const ProjectsTableBody: React.FC<ProjectsTableBodyProps> = ({
             <Link href={url}>{name}</Link>
           </ProjectsTableCell>
           <ProjectsTableCell className={columns[2]}>
-            {musicStores
-              ?.filter(({ name, url }) => url && name === 'Bandcamp')
-              .map(({ name, url }) => (
-                <Link key={name} href={url}>
-                  <Store name={name} />
-                </Link>
-              ))}
+            <div className="ProjectsTableBody--StoresCell">
+              {musicStores
+                ?.filter(({ name, url }) => url && name === 'Bandcamp')
+                .map(({ name, url }) => (
+                  <Link key={name} href={url}>
+                    <Store name={name} />
+                  </Link>
+                ))}
+            </div>
           </ProjectsTableCell>
           <ProjectsTableCell className={columns[3]}>
             <div className="ProjectsTableBody--StoresCell">

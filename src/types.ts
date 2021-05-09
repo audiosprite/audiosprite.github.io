@@ -11,6 +11,7 @@ export enum Genre {
   chiptune = 'Chiptune',
   disco = 'Disco',
   doom = 'Doom',
+  downtempo = 'Downtempo',
   eleki = 'Eleki',
   funk = 'Funk',
   grunge = 'Grunge',
@@ -82,6 +83,7 @@ type Publisher = {
 
 export enum StoreName {
   instagram = 'Instagram',
+  ios = 'iOS',
   itch = 'itch.io',
   itunes = 'iTunes',
   ps4 = 'PlayStation 4',
