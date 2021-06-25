@@ -1,7 +1,13 @@
 @import '../../scss';
 
 .Blog {
+  display: flex;
+  flex-direction: column;
   align-items: unset;
+  padding: 80px 0 100px;
+  row-gap: 40px;
+  min-width: 400px;
+  max-width: 800px;
   .Blog--Post {
     font-size: 16px;
     // @include piecewise(font-size, 16, 22);
@@ -13,10 +19,7 @@
       font-size: 24px !important;
     }
     line-height: 1.2;
-    min-width: 400px;
-    max-width: 800px;
     margin: 0 auto;
-    padding: 80px 0 100px;
     white-space: pre-line;
   }
 }

@@ -1,0 +1,36 @@
+@import '../../scss';
+
+.Quote {
+  display: flex;
+  flex-direction: column;
+  margin: 3.2rem auto;
+  max-width: 75%;
+  position: relative;
+  row-gap: 8px;
+  .Quote--QuotationMark {
+    position: absolute;
+    font-size: 140px;
+    font-size: 220px;
+    font-weight: bold;
+    line-height: 1;
+    opacity: 0.2;
+    @include noSelect();
+    &.Left {
+      right: 110%;
+      top: 33%;
+    }
+    &.Right {
+      left: 110%;
+      bottom: 33%;
+    }
+  }
+  > p {
+    font-style: italic;
+    color: rgba($black, 0.85);
+    letter-spacing: 0.3px;
+  }
+  .Quote--Author {
+    align-self: flex-end;
+    font-style: italic;
+  }
+}
