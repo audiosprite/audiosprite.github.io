@@ -9,15 +9,7 @@
   min-width: 400px;
   max-width: 800px;
   .Blog--Post {
-    font-size: 16px;
-    // @include piecewise(font-size, 16, 22);
-    @media (max-width: $globalMin) {
-      font-size: 16px !important;
-    }
-    font-size: calc(16px (100vw - 480px) / 86.6666666667);
-    @media (min-width: $globalMax) {
-      font-size: 24px !important;
-    }
+    @include piecewise(font-size, 16, 22);
     line-height: 1.2;
     margin: 0 auto;
     white-space: pre-line;

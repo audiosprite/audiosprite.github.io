@@ -6,12 +6,6 @@
   $squareMax: 200;
   @include piecewise(height, $squareMin, $squareMax);
   @include piecewise(width, $squareMin, $squareMax);
-  min-width: #{$squareMin}px;
-  min-height: #{$squareMin}px;
-  max-width: #{$squareMax}px;
-  max-height: #{$squareMax}px;
-  width: calc(105px + (100vw - 480px) / 5.4736842105);
-  height: calc(105px + (100vw - 480px) / 5.4736842105);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -79,7 +73,6 @@
     right: 5px;
     top: 3px;
     background: $darkGrey;
-    font-size: 14;
     text-transform: lowercase;
     @include piecewise(font-size, 14, 18);
     transition: 75ms ease;

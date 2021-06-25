@@ -7,17 +7,9 @@ table.ProjectsTable {
   width: 100%;
   tr {
     td {
-      font-size: 20px;
       padding: 4px;
       vertical-align: middle;
       @include piecewise(font-size, 15, 20);
-      @media (min-width: $globalMin) {
-        font-size: 15px;
-      }
-      font-size: calc(15px + (100vw - 480px) / 104);
-      @media (min-width: $globalMax) {
-        font-size: 20px;
-      }
       &:nth-child(3),
       &:nth-child(6) {
         @include piecewise(display, none, table-cell, $projectsTableBp);
