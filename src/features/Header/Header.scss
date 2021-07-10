@@ -1,24 +1,29 @@
 @import '../../scss';
 
 header {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 16px 22px;
-  // padding-bottom: 22px;
   position: fixed;
   width: 100vw;
-  top: 0;
   z-index: 100;
+  top: 0;
+  padding: 20px 16px 22px;
+  flex: 0 0 auto;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
   @include appBackground();
-  .Name {
-    @include piecewise(font-size, 28, 48);
-    font-weight: 700;
-    font-family: Fakt, sans-serif;
-    letter-spacing: 0.3px;
-    white-space: nowrap;
-    max-height: 42px;
-    @include noSelect();
+  .Header--Content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    .Name {
+      @include piecewise(font-size, 28, 48);
+      font-weight: 700;
+      font-family: Fakt, sans-serif;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      max-height: 42px;
+      @include noSelect();
+    }
   }
 }

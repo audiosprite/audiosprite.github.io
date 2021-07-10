@@ -1,13 +1,18 @@
 import * as React from 'react';
 import { Quote, YouTube } from '../../components';
 import { lorem } from '../../utils';
-import { BlogPostFooter } from './BlogPostFooter';
+import { BlogAudio } from './BlogAudio';
+import { BlogPostFooter, BlogPostHeader } from './BlogPostFooter';
 import './Blog.scss';
 
 const Blog = () => {
   return (
     <div className="Blog">
+      <BlogPostHeader subtitle="Lorem ipsum dolor lorem ipsum dolor">
+        Lorem ipsum dolor
+      </BlogPostHeader>
       <div className="Blog--Post">
+        <BlogAudio src="https://api.soundcloud.com/tracks/1058562628/stream" />
         <p>{lorem}</p>
         <YouTube id="2QpT6T5NnDE" />
         <p>{lorem}</p>

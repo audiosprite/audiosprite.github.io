@@ -5,11 +5,13 @@ import './Header.scss';
 
 const Header = () => (
   <header>
-    <Link className="Name" hideUnderline to="/">
-      <Heading>John Fio</Heading>
-    </Link>
-    <Spacer />
-    <Nav />
+    <div className="Header--Content">
+      <Link className="Name" hideUnderline to="/">
+        <Heading>John Fio</Heading>
+      </Link>
+      <Spacer />
+      <Nav />
+    </div>
   </header>
 );
 

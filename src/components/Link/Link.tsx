@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { Link as ReactRouterLink } from 'react-router-dom';
+import {
+  Link as ReactRouterLink,
+  LinkProps as RRLinkProps,
+} from 'react-router-dom';
 import { Amplitude } from '../../amplitude/amplitude';
 import './Link.scss';
 
-type LinkProps = {
+type LinkProps = Omit<RRLinkProps, 'to'> & {
   className?: string;
   hideUnderline?: boolean;
   href?: string;
@@ -15,11 +18,13 @@ const Link: React.FC<LinkProps> = ({
   children,
   hideUnderline,
   href,
+  onClick: handleClick,
   to,
 }) => {
   const Component = to ? ReactRouterLink : href ? 'a' : 'div';
-  const onClick = () => {
+  const onClick = (e: any) => {
     if (href) Amplitude.logEvent('navigateExternal', { href });
+    if (handleClick) handleClick(e);
   };
   return (
     <Component

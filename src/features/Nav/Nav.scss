@@ -1,17 +1,38 @@
 @import '../../scss';
 
-$navBreakpoint: 500;
-
-nav {
-  display: flex;
+@mixin navGrid() {
+  @include piecewise(position, absolute, relative, $navBreakpoint);
   @include piecewise(display, grid, flex, $navBreakpoint);
   grid-template-rows: auto auto;
   grid-auto-flow: column;
+}
+
+$navBreakpoint: 650;
+
+nav {
+  display: inline-flex;
+  @include piecewise(position, fixed, unset, $navBreakpoint);
+  @include piecewise(height, 100vh, unset, $navBreakpoint);
+  @include piecewise(align-items, flex-end, unset, $navBreakpoint);
+  @include piecewise(background-color, $purple, unset, $navBreakpoint);
+  @include piecewise(border-left, 1px solid $grey, unset, $navBreakpoint);
+  @include piecewise(padding, 24px 12px 8px 24px, unset, $navBreakpoint);
+  top: 0;
+  transition: 75ms ease;
   column-gap: 14px;
-  row-gap: 4px;
+  @include piecewise(column-gap, 8, 14, $navBreakpoint + 200);
+  row-gap: 6px;
   align-items: center;
   @include piecewise(flex-direction, column, row, $navBreakpoint);
-  @include piecewise(font-size, 15, 22);
+  // @include piecewise(font-size, 15, 22, $navBreakpoint, $globalMax);
+  font-size: 22px;
+  &:not(.isOpen) {
+    right: -100%;
+  }
+  &.isOpen {
+    left: unset;
+    right: 0;
+  }
   a {
     @include noSelect();
     &:not(:last-child) {
@@ -19,7 +40,23 @@ nav {
     }
     &.activeRoute {
       text-decoration: underline;
-      // border-bottom: 2px solid $black;
     }
+  }
+}
+
+.Nav--Hamburger {
+  @include piecewise(display, flex, none, $navBreakpoint);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 24px;
+  height: 20px;
+  @include antialiasing();
+  @include clickAnimation();
+  > div {
+    height: 3px;
+    background-color: $black;
+    border-radius: 50px;
   }
 }

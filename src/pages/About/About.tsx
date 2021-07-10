@@ -17,7 +17,7 @@ He lives in Brooklyn, New York.`;
 const testBio = `
 <strong>John Fio</strong> is a composer (ASCAP), multi-instrumentalist, producer, arranger, and audio engineer.
 
-When John was 11, he bootleg-recorded the entire <i>Zelda: Majora's Mask</i> soundtrack from the speakers of his TV onto a cassette player. This early love of game music later drove him to study music at Rutgers University in New Jersey.
+When John was 11, he bootleg-recorded the <i>Zelda: Majora's Mask</i> soundtrack from the speakers of his TV onto a cassette player. This early love of game music later drove him to study music at Rutgers University in New Jersey.
 
 Since then, John has had the opportunity of contributing original music to a <a href="/credits">wide range of videogames, shortfilms, and games-culture programming</a>. He also acts as a music curator for indie game venue <a href="https://www.wonderville.nyc/">Wonderville</a> in Bushwick, NYC.
 
