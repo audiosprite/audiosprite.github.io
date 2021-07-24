@@ -3,7 +3,7 @@ import { FC, Suspense, useEffect, useRef } from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { useData } from '../hooks';
 import { Footer, Header } from '../features';
-import { About, Blog, Contact, Home, Press, Projects } from '../pages';
+import { About, Blog, Contact, Home, Press, Projects, Utils } from '../pages';
 // import { Spinner } from './Icons';
 import Spacer from './Spacer';
 // import { Third } from '.';
@@ -53,6 +53,7 @@ const App: FC<Record<string, unknown>> = () => {
               <Route exact path="/credits" component={Projects} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
+              <Route exact path="/utils" component={Utils} />
               <Redirect to="/" />
             </Switch>
           </Suspense>
