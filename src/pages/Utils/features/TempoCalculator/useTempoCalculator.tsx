@@ -1,22 +1,40 @@
 import { FormEvent, useMemo, useState } from 'react';
 
-const maxTempo = 360;
+export const minTempo = 40;
+export const maxTempo = 360;
 
 type getTempoSetArgs = { baseTempo: number; multiplier?: number };
 const getTempoSet = ({ baseTempo, multiplier = 1 }: getTempoSetArgs) => {
-  if (baseTempo < 1 || baseTempo > maxTempo) {
+  if (baseTempo < minTempo || baseTempo > maxTempo) {
     return [];
   }
 
-  const numPowers = 7;
+  const numPowers = 9;
   const bins = Array.from(
     new Array(numPowers),
-    (_, i) => i - Math.floor(numPowers / 2),
-  ).map((p) => baseTempo * Math.pow(2, p));
+    (_, i) => baseTempo * Math.pow(2, i - Math.floor(numPowers / 2)),
+  );
 
-  return [...bins, ...(multiplier === 1 ? [] : bins.map((n) => n * multiplier))]
-    .filter((n) => n >= 30 && n <= 360)
-    .sort((a, b) => a - b);
+  const pivotTempo = Math.max(
+    ...[
+      ...bins,
+      ...(multiplier === 1 ? [] : bins.map((n) => n * multiplier)),
+    ].filter((n) => n >= minTempo && n <= maxTempo),
+  );
+
+  const pivotTempi: number[] = [];
+  for (let i = 1; (pivotTempo * 4) / i >= minTempo; i++) {
+    const newTempo = (pivotTempo * 4) / i;
+    if (
+      newTempo === +newTempo.toFixed(3) &&
+      newTempo <= maxTempo &&
+      !pivotTempi.includes(newTempo)
+    ) {
+      pivotTempi.unshift((pivotTempo * 4) / i);
+    }
+  }
+
+  return pivotTempi;
 };
 
 export const useTempoCalculator = () => {
