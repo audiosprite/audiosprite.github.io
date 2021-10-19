@@ -5,6 +5,7 @@ import { useData } from '../hooks';
 import { Footer, Header } from '../features';
 import { About, Blog, Contact, Home, Press, Projects } from '../pages';
 // import { Spinner } from './Icons';
+import { soundcloudData } from '../data';
 import Spacer from './Spacer';
 // import { Third } from '.';
 import { PlaylistProvider } from '../hooks/usePlaylist';
@@ -38,7 +39,7 @@ const App: FC<Record<string, unknown>> = () => {
 
   return (
     // @ts-ignore
-    <PlaylistProvider apiTracks={data?.tracks}>
+    <PlaylistProvider apiTracks={data?.tracks || soundcloudData.tracks}>
       <div className="App">
         <div className="App--Background" />
         {/* <Noise /> */}
