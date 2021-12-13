@@ -25,7 +25,11 @@ const Nav = () => {
 
   return (
     <>
-      <button className="Nav--Hamburger" onClick={toggleOpen}>
+      <button
+        aria-label="Hamburger"
+        className="Nav--Hamburger"
+        onClick={toggleOpen}
+      >
         <div />
         <div />
         <div />
