@@ -34,7 +34,7 @@ export const Audio: React.FC<AudioProps> = ({
 }) => {
   const { imgStyle, src, srcSet } = React.useMemo(
     () => ({
-      src: getSoundcloudArt(artworkUrl, 200),
+      src: getSoundcloudArt(artworkUrl, 300),
       srcSet: getSoundcloudArt(artworkUrl, 500),
       imgStyle: {
         animationDelay: `${Math.random() * 6}s`,
