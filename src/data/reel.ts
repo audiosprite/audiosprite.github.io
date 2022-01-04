@@ -60,6 +60,7 @@ export const reelData: Mp3Type[] = [
   },
   {
     name: 'Fight Back',
+    src: 'wholesomeslaughter_fightback',
   },
   {
     name: 'Cascabel and Pasus',
