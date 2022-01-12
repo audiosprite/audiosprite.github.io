@@ -3,7 +3,15 @@ import { FC, Suspense, useEffect, useRef } from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { useData } from '../hooks';
 import { Footer, Header } from '../features';
-import { About, Blog, Contact, Home, Press, Projects } from '../pages';
+import {
+  About,
+  Blog,
+  Contact,
+  Home,
+  JustReleased,
+  Press,
+  Projects,
+} from '../pages';
 // import { Spinner } from './Icons';
 import { soundcloudData } from '../data';
 import Spacer from './Spacer';
@@ -48,7 +56,8 @@ const App: FC<Record<string, unknown>> = () => {
         <div className="AppBody">
           <Suspense fallback={<div />}>
             <Switch>
-              <Route exact path="/" component={Home} />
+              {/* Home */}
+              <Route exact path="/" component={JustReleased} />
               <Route exact path="/blog" component={Blog} />
               <Route exact path="/press" component={Press} />
               <Route exact path="/credits" component={Projects} />
