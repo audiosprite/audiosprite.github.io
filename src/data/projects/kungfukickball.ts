@@ -54,6 +54,19 @@ export default {
       outlet: 'MP3s and NPCs',
       url: 'https://mp3sandnpcs.com/home/review-kungfu-kickball-consoles-pc',
     },
+    {
+      /*
+        Although we definitely found our favourites and our most challenging maps. I personally love the Desert as the soundtrack absolutely banging.
+
+        Speaking of banging music, oh my goodness. John Fio did an amazing job with the soundtrack that doesn’t seem to get repetitive or annoying as some arcade-like games can be. With an Eastern vibe to match the aesthetic of the game, they’ve mixed in metal and at times some bass drops to really get you grooving while you are playing. Each map has a unique music track that compliments it beautifully. The addition of fighting game voice-overs created some excitement too. Getting a ‘team smackdown’ or a ‘double knockout’ really hyped up the vibe. I don’t usually comment on a game’s music, but this time it could not go unnoticed!
+      */
+      quote:
+        'Speaking of banging music, oh my goodness. John Fio did an amazing job with the soundtrack... I don’t usually comment on a game’s music, but this time it could not go unnoticed!',
+      author: 'MrsLlante',
+      outlet: 'Checkpoint Gaming',
+      url:
+        'https://checkpointgaming.net/reviews/2022/02/kungfu-kickball-review-its-a-double-knockout/',
+    },
   ],
   publisher: {
     name: 'Blowfish Studios',

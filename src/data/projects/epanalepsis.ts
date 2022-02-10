@@ -91,13 +91,13 @@ export default {
       outlet: 'gamerstyle',
       url: 'http://gamerstyle.com.mx/2015/06/03/resena-epanalepsis/',
     },
-    {
-      quote: 'Quite good.',
-      author: 'Bryan Cebulski',
-      outlet: 'TechRaptor',
-      url:
-        'https://techraptor.net/gaming/review/epanalepsis-review-player-unfriendly-narrative',
-    },
+    // {
+    //   quote: 'Quite good.',
+    //   author: 'Bryan Cebulski',
+    //   outlet: 'TechRaptor',
+    //   url:
+    //     'https://techraptor.net/gaming/review/epanalepsis-review-player-unfriendly-narrative',
+    // },
     {
       quote: 'The music is superb.',
       author: 'Chris',
