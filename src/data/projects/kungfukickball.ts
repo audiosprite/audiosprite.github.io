@@ -47,6 +47,13 @@ export default {
       url:
         'https://lordsofgaming.net/2022/02/kung-fu-kickball-review-oriental-fun-just-for-kicks/',
     },
+    {
+      quote:
+        'KungFu Kickball has a stellar soundtrack thanks to composer John Fio...',
+      author: 'Terrance Pryor',
+      outlet: 'MP3s and NPCs',
+      url: 'https://mp3sandnpcs.com/home/review-kungfu-kickball-consoles-pc',
+    },
   ],
   publisher: {
     name: 'Blowfish Studios',
