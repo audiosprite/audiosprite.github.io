@@ -67,6 +67,14 @@ export default {
       url:
         'https://checkpointgaming.net/reviews/2022/02/kungfu-kickball-review-its-a-double-knockout/',
     },
+    {
+      // The music is also great, a nice mixture of rocking action music and specific theme songs for the different levels.
+      quote: 'The music is also great...',
+      author: 'Callum Davis',
+      outlet: 'Keen Gamer',
+      url:
+        'https://www.keengamer.com/articles/reviews/pc-reviews/kungfu-kickball-review-with-bells-and-whistles-on-pc/',
+    },
   ],
   publisher: {
     name: 'Blowfish Studios',
