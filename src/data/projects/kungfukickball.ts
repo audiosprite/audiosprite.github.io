@@ -81,7 +81,7 @@ export default {
     url: 'https://www.blowfishstudios.com/',
   },
   type: ProjectType['game'],
-  releaseDate: new Date(),
+  releaseDate: new Date('April 13, 2021'),
   roles: [Role['music']],
   selectTracks: [],
   musicStores: [

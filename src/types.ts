@@ -20,6 +20,7 @@ export enum Genre {
   jazz = 'Jazz',
   library = 'Library',
   metal = 'Metal',
+  minimalism = 'Minimalism',
   orchestral = 'Orchestral',
   rock = 'Rock',
   spiritual = 'Spirital',

@@ -9,6 +9,7 @@ import intothedarknarakan from './intothedarknarakan';
 import kungfukickball from './kungfukickball';
 import magesandmurderdads from './magesandmurderdads';
 import mangoman from './mangoman';
+import marriedToTheBag from './marriedToTheBag';
 import pumpkin from './pumpkin';
 import rollcontrol from './rollcontrol';
 import rollforcrit from './rollforcrit';
@@ -21,6 +22,7 @@ import zarvot from './zarvot';
 
 const projects: Project[] = [
   skatestory,
+  marriedToTheBag,
   shillelagh,
   kungfukickball,
   ilivelikethis,
