@@ -5,6 +5,7 @@ import bentobanana from './bentobanana';
 import eatshitanddie from './eatshitanddie';
 import epanalepsis from './epanalepsis';
 import ilivelikethis from './ilivelikethis';
+import iWantToFuckThatGorilla from './iWantToFuckThatGorilla';
 import intothedarknarakan from './intothedarknarakan';
 import kungfukickball from './kungfukickball';
 import magesandmurderdads from './magesandmurderdads';
@@ -22,6 +23,7 @@ import zarvot from './zarvot';
 
 const projects: Project[] = [
   skatestory,
+  iWantToFuckThatGorilla,
   marriedToTheBag,
   shillelagh,
   kungfukickball,
