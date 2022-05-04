@@ -8,7 +8,7 @@ export default {
   genrePool: [],
   name: 'I Want to Fuck That Gorilla',
   type: ProjectType['shortfilm'],
-  releaseDate: new Date(),
+  // releaseDate: new Date(),
   roles: [Role['music']],
   selectTracks: [],
   // stores: [

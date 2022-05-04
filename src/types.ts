@@ -9,6 +9,7 @@ export enum Genre {
   bigband = 'Big Band',
   chamber = 'Chamber',
   chiptune = 'Chiptune',
+  country = 'Country',
   disco = 'Disco',
   doom = 'Doom',
   downtempo = 'Downtempo',

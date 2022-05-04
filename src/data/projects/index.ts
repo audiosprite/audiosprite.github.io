@@ -12,6 +12,7 @@ import magesandmurderdads from './magesandmurderdads';
 import mangoman from './mangoman';
 import marriedToTheBag from './marriedToTheBag';
 import pumpkin from './pumpkin';
+import riptide from './riptide';
 import rollcontrol from './rollcontrol';
 import rollforcrit from './rollforcrit';
 import shillelagh from './shillelagh';
@@ -25,6 +26,7 @@ const projects: Project[] = [
   skatestory,
   iWantToFuckThatGorilla,
   marriedToTheBag,
+  riptide,
   shillelagh,
   kungfukickball,
   ilivelikethis,
