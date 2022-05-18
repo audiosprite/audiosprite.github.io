@@ -61,12 +61,17 @@ const ProjectsTableBody: React.FC<ProjectsTableBodyProps> = ({
             </div>
           </ProjectsTableCell>
           <ProjectsTableCell className={columns[4]}>
-            <Link href={developer.url}>{developer.name}</Link>
+            <div className="ProjectsTableBody--WithCell">
+              <Link href={developer.url}>{developer.name}</Link>
+              {publisher && (
+                <>
+                  <span>{' / '}</span>
+                  <Link href={publisher.url}>{publisher?.name}</Link>
+                </>
+              )}
+            </div>
           </ProjectsTableCell>
           <ProjectsTableCell className={columns[5]}>
-            {publisher && <Link href={publisher.url}>{publisher?.name}</Link>}
-          </ProjectsTableCell>
-          <ProjectsTableCell className={columns[6]}>
             {releaseDate?.getFullYear() || '-'}
           </ProjectsTableCell>
         </tr>

@@ -7,9 +7,9 @@ type ProjectsTableCellProps = {
 
 const ProjectsTableCell: React.FC<ProjectsTableCellProps> = ({
   children,
-  className,
+  className = '',
 }) => (
-  <td className={`${className}`.trim()}>
+  <td className={className.trim()}>
     <div className="ProjectsTableCell--Inner">{children}</div>
   </td>
 );
