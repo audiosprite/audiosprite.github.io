@@ -19,6 +19,7 @@ import shillelagh from './shillelagh';
 import skatestory from './skatestory';
 import supercrome from './supercrome';
 import swordcoastcoast2coast from './swordcoastcoast2coast';
+import trance from './trance';
 import wholesomeslaughter from './wholesomeslaughter';
 import zarvot from './zarvot';
 
@@ -26,6 +27,7 @@ const projects: Project[] = [
   skatestory,
   iWantToFuckThatGorilla,
   marriedToTheBag,
+  trance,
   riptide,
   shillelagh,
   kungfukickball,

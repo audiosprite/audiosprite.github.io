@@ -1,16 +1,10 @@
-import {
-  StoreName,
-  ProjectType,
-  //   MusicStoreName,
-  Role,
-  //   Genre,
-} from '../../types';
+import { StoreName, ProjectType, Role, Genre } from '../../types';
 
 export default {
   developer: {
     name: `Ben O'Hene`,
   },
-  // genrePool: [],
+  genrePool: [Genre['noise']],
   name: 'Eat Shit & Die',
   type: ProjectType['shortfilm'],
   releaseDate: new Date('February 18, 2019'),
