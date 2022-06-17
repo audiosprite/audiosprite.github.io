@@ -1,9 +1,11 @@
 export { Audio } from './Audio/Audio';
+export * from './Checkbox';
 export { Divider } from './Divider/Divider';
 export { AudioOld } from './Audio.old/AudioOld';
 export { default as Button } from './Button/Button';
 export { default as Heading } from './Heading/Heading';
 export { default as Img } from './Icons/Img/Img';
+export * from './Input';
 export { default as Link } from './Link/Link';
 export { Quote } from './Quote/Quote';
 export { default as Spacer } from './Spacer';

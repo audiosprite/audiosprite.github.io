@@ -9,6 +9,7 @@ import {
   Contact,
   Home,
   JustReleased,
+  Melee,
   Press,
   Projects,
 } from '../pages';
@@ -63,6 +64,7 @@ const App: FC<Record<string, unknown>> = () => {
               <Route exact path="/credits" component={Projects} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
+              <Route path="/melee" component={Melee} />
               <Redirect to="/" />
             </Switch>
           </Suspense>

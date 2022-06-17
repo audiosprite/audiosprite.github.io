@@ -1,0 +1,8 @@
+.Input--Root {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  input.Input {
+    border: none;
+  }
+}
