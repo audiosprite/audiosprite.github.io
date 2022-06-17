@@ -1,0 +1,38 @@
+.TempoCalculator {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  row-gap: 24px;
+  .TempoCalculator--Inputs {
+    display: flex;
+    column-gap: 16px;
+    > div {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      input {
+        font-size: 24px;
+        text-align: center;
+      }
+    }
+  }
+  .TempoCalculator--Display {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, transparent 50%, black 50%);
+    .DisplayNode {
+      position: absolute;
+      .DisplayNode--Inner {
+        .DisplayNode--Text {
+          position: absolute;
+        }
+      }
+    }
+  }
+}

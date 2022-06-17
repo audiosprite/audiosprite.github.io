@@ -11,6 +11,7 @@ import {
   JustReleased,
   Press,
   Projects,
+  Utils,
 } from '../pages';
 // import { Spinner } from './Icons';
 import { soundcloudData } from '../data';
@@ -63,6 +64,7 @@ const App: FC<Record<string, unknown>> = () => {
               <Route exact path="/credits" component={Projects} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
+              <Route exact path="/utils" component={Utils} />
               <Redirect to="/" />
             </Switch>
           </Suspense>
