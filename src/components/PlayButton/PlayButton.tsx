@@ -17,7 +17,9 @@ export const PlayButton: React.FC<PlayButtonProps> = ({
     <Button className={`PlayButton ${className}`.trim()} onClick={onTogglePlay}>
       <Img
         alt={playing ? 'pause' : 'play'}
+        height="30"
         src={`soundcloud/${playing ? 'pause' : 'play'}.svg`}
+        width="30"
       />
     </Button>
   );

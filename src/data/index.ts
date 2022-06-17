@@ -79,3 +79,5 @@ export const socialMediaImages = {
 export const schema = 'VideoGames'; // 'VideoGames'
 
 export const imgDir = '/build/img/';
+
+export * from './soundcloud';

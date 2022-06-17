@@ -25,14 +25,55 @@ export default {
   name: 'KungFu Kickball',
   pressQuotes: [
     {
-      // quote:
-      //   'From the moment you open the main menu, you’ll feel like you’re in a somber training session like in The Karate Kid or Ip Man, and the tracks continue bangers from there. The Temple arena theme is very fast-paced, with some saxophone and jazz vibes, and even the character select screen has its own theme, filled with funky bass guitar and twanky electric guitar riffs. This is a really fun soundtrack to listen to, and while it certainly has vibes from kungfu or martial arts movies, it also brings a new style and flavor into the mix for an awesome experience.',
-      // quote: 'From the moment you open the main menu, you’ll feel like you’re in a somber training session like in The Karate Kid or Ip Man, and the tracks continue bangers from there',
       quote:
         'From the moment you open the main menu, you’ll feel like you’re in a somber training session like in The Karate Kid or Ip Man, and the tracks continue bangers from there... This is a really fun soundtrack to listen to, and while it certainly has vibes from kungfu or martial arts movies, it also brings a new style and flavor into the mix for an awesome experience.',
       author: 'Cody',
       outlet: 'IndieGamesPulse',
       url: 'https://www.youtube.com/watch?v=WsB-HXEER6M',
+    },
+    {
+      quote:
+        '...fantastic songs that really build the tension and feel like proper anthems of sorts that perfectly compliment the action happening on screen.',
+      author: 'Jason Capp',
+      outlet: 'NintendoLink',
+      url:
+        'https://nintendolink.com/2022/02/09/kungfu-kickball-switch-review-there-must-exist-a-fusion-of-mind-and-foot/',
+    },
+    {
+      quote:
+        '...the soundtrack is excellent throughout. Each arena has its own music which fits in with the theme and ensures the pulse-pounding action is complemented perfectly',
+      author: 'Daniel Amoroso',
+      outlet: 'Lords of Gaming',
+      url:
+        'https://lordsofgaming.net/2022/02/kung-fu-kickball-review-oriental-fun-just-for-kicks/',
+    },
+    {
+      quote:
+        'KungFu Kickball has a stellar soundtrack thanks to composer John Fio...',
+      author: 'Terrance Pryor',
+      outlet: 'MP3s and NPCs',
+      url: 'https://mp3sandnpcs.com/home/review-kungfu-kickball-consoles-pc',
+    },
+    {
+      /*
+        Although we definitely found our favourites and our most challenging maps. I personally love the Desert as the soundtrack absolutely banging.
+
+        Speaking of banging music, oh my goodness. John Fio did an amazing job with the soundtrack that doesn’t seem to get repetitive or annoying as some arcade-like games can be. With an Eastern vibe to match the aesthetic of the game, they’ve mixed in metal and at times some bass drops to really get you grooving while you are playing. Each map has a unique music track that compliments it beautifully. The addition of fighting game voice-overs created some excitement too. Getting a ‘team smackdown’ or a ‘double knockout’ really hyped up the vibe. I don’t usually comment on a game’s music, but this time it could not go unnoticed!
+      */
+      quote:
+        'Speaking of banging music, oh my goodness. John Fio did an amazing job with the soundtrack... I don’t usually comment on a game’s music, but this time it could not go unnoticed!',
+      author: 'MrsLlante',
+      outlet: 'Checkpoint Gaming',
+      url:
+        'https://checkpointgaming.net/reviews/2022/02/kungfu-kickball-review-its-a-double-knockout/',
+    },
+    {
+      // The music is also great, a nice mixture of rocking action music and specific theme songs for the different levels.
+      quote: 'The music is also great...',
+      author: 'Callum Davis',
+      outlet: 'Keen Gamer',
+      url:
+        'https://www.keengamer.com/articles/reviews/pc-reviews/kungfu-kickball-review-with-bells-and-whistles-on-pc/',
     },
   ],
   publisher: {
@@ -40,7 +81,7 @@ export default {
     url: 'https://www.blowfishstudios.com/',
   },
   type: ProjectType['game'],
-  releaseDate: new Date(),
+  releaseDate: new Date('April 13, 2021'),
   roles: [Role['music']],
   selectTracks: [],
   musicStores: [

@@ -5,15 +5,7 @@ import useSort from '../../hooks/useSort';
 import projects from '../../data/projects';
 import './ProjectsTable.scss';
 
-export const projectsTableColumns = [
-  '',
-  'project',
-  '',
-  '',
-  'developer',
-  'publisher',
-  'release',
-];
+export const projectsTableColumns = ['', 'project', '', '', 'with', 'release'];
 
 const initialSortBy = { column: 'release', reverse: false };
 const ProjectsTableContext = React.createContext({
