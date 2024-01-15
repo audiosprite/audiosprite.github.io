@@ -1,4 +1,4 @@
-import { ProjectType, Role, Genre, StoreName, Project } from '../../types';
+import { ProjectType, Role, Genre, StoreName } from '../../types';
 
 export default {
   developer: {
