@@ -1,17 +1,10 @@
-import {
-  StoreName,
-  ProjectType,
-  //   MusicStoreName,
-  Role,
-  //   Genre,
-} from '../../types';
+import { StoreName, ProjectType, Role } from '../../types';
 
 export default {
   developer: {
     name: 'Ranged Touch',
     url: 'https://rangedtouch.com/',
   },
-  // genrePool: [],
   name: 'Sword Coast: Coast 2 Coast',
   type: ProjectType['podcast'],
   releaseDate: new Date('June 15, 2019'),

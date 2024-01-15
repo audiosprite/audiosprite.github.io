@@ -24,6 +24,7 @@ export enum Genre {
   minimalism = 'Minimalism',
   noise = 'Noise',
   orchestral = 'Orchestral',
+  punk = 'Punk',
   rock = 'Rock',
   spiritual = 'Spirital',
   wonky = 'Wonky',
@@ -37,7 +38,7 @@ export type Project = {
   name: string;
   pressQuotes?: PressQuote[];
   publisher?: Publisher;
-  releaseDate?: Date;
+  releaseDate?: Date | (Date | undefined)[];
   roles: Role[];
   //   screenshotHero?: string;
   //   selectedTracks: [];
@@ -92,6 +93,7 @@ export enum StoreName {
   ps4 = 'PlayStation 4',
   steam = 'Steam',
   switch = 'Switch',
+  vimeo = 'Vimeo',
   xboxone = 'Xbox One',
   youtube = 'YouTube',
 }
