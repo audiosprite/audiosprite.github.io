@@ -23,7 +23,7 @@ Since then, John has had the opportunity of contributing original music to a <a 
 
 In 2019, John placed 13<sup>th</sup> at EVO in <i>Super Smash Bros. Melee</i>. He lives in Brooklyn, New York.`.trim();
 
-const About = () => (
+const About: React.FC = () => (
   <div className="About">
     {/* <Third> */}
     <div className="About--Inner">
@@ -32,11 +32,12 @@ const About = () => (
           <Img
             alt="John Fio"
             className="About--Portrait"
-            src="photos/portrait-emi.jpg"
+            src="photos/signalawards-crop.jpg"
           />
           <Spacer />
           <div>
-            photo © <Link href="https://www.uglymachine.net/">Emi Spicer</Link>
+            photo ©{' '}
+            <Link href="https://www.signalaward.com/">The Signal Awards</Link>
           </div>
         </div>
       </div>
