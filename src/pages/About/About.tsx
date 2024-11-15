@@ -19,7 +19,7 @@ const testBio = `
 
 When John was 11, he bootleg-recorded the <i>Zelda: Majora's Mask</i> soundtrack from the speakers of his TV onto a cassette player. This early love of game music later drove him to study music at Rutgers University in New Jersey.
 
-Since then, John has had the opportunity of contributing original music to a <a href="/credits">wide range of videogames, shortfilms, and games-culture programming</a>. He has acted as a music curator for indie game venue <a href="https://www.wonderville.nyc/">Wonderville</a> in Bushwick, NYC.
+Since then, John has had the opportunity of contributing original music to a <a href="/credits">wide range of videogames, animations, shortfilms, and podcasts</a>. He has acted as a music curator for indie game venue <a href="https://www.wonderville.nyc/">Wonderville</a> in Bushwick, NYC.
 
 He lives in Brooklyn, New York, and is a mainstay of the local competitive <i>Super Smash Bros. Melee</i> scene.`.trim();
 

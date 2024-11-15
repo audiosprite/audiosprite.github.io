@@ -7,7 +7,7 @@ export default {
   },
   genrePool: [[Genre['punk'], Genre['rock']]],
   name: 'How To Be A Cool Teen In The Apocalypse',
-  releaseDate: new Date('2023'),
+  releaseDate: new Date('Jan 2, 2023'),
   type: ProjectType['shortfilm'],
   roles: [Role['music']],
   stores: [

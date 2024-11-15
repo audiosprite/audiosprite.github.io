@@ -1,9 +1,14 @@
 import * as React from 'react';
 import { Link } from '../../components';
 import { Img, Store } from '../../components/Icons';
-import { Project } from '../../types';
+import { Project, ProjectType } from '../../types';
 import ProjectsTableCell from './ProjectsTableCell';
 import './ProjectsTableBody.scss';
+
+const imgDictionary: Partial<Record<ProjectType, string>> = {
+  FeatureFilm: 'shortfilm',
+  LetsPlay: 'podcast',
+};
 
 type ProjectsTableBodyProps = {
   columns: string[];
@@ -32,7 +37,7 @@ const ProjectsTableBody: React.FC<ProjectsTableBodyProps> = ({
               alt={type}
               className="ProjectsTableBody--Media"
               size={16}
-              src={`media/${type === 'LetsPlay' ? 'podcast' : type}.svg`}
+              src={`media/${imgDictionary[type] ?? type}.svg`}
             />
           </ProjectsTableCell>
           <ProjectsTableCell className={columns[1]}>

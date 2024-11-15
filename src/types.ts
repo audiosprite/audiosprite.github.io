@@ -78,6 +78,7 @@ export enum ProjectType {
   shortfilm = 'Shortfilm',
   podcast = 'Podcast',
   letsplay = 'LetsPlay',
+  featureFilm = 'FeatureFilm',
 }
 
 type Publisher = {

@@ -2,6 +2,7 @@ import { Project } from '../../types';
 
 import acetennis64 from './acetennis64';
 import bentobanana from './bentobanana';
+import canoeDigIt from './canoeDigIt';
 import eatshitanddie from './eatshitanddie';
 import epanalepsis from './epanalepsis';
 import howToBeACoolTeenInTheApocalypse from './howToBeACoolTeenInTheApocalypse';
@@ -31,9 +32,10 @@ const projects: Project[] = [
   skatestory,
   theProcess,
   unwound,
+  canoeDigIt,
+  iWantToFuckThatGorilla,
   partneringWithBeavers,
   howToBeACoolTeenInTheApocalypse,
-  iWantToFuckThatGorilla,
   marriedToTheBag,
   trance,
   riptide,
