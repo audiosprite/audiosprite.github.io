@@ -7,7 +7,6 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { Amplitude } from '../amplitude/amplitude';
 import { noop } from '../utils';
 import useAudio from './useAudio';
 
@@ -133,14 +132,6 @@ const usePlaylistProvider = ({
       if (newCurrentIndex === currentIndex) {
         controls[isPlaying ? 'pause' : 'play']();
       } else {
-        Amplitude.logEvent(
-          'selectTrack',
-          (({ genre, playlistIndex, title }) => ({
-            genre,
-            playlistIndex,
-            title,
-          }))(tracks[newCurrentIndex]),
-        );
         setCurrentIndex(newCurrentIndex);
       }
     } else {

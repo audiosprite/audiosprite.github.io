@@ -18,7 +18,6 @@ import { soundcloudData } from '../data';
 import Spacer from './Spacer';
 // import { Third } from '.';
 import { PlaylistProvider } from '../hooks/usePlaylist';
-import { Amplitude } from '../amplitude/amplitude';
 import './App.scss';
 
 // const ThirdSpinner = () => (
@@ -29,9 +28,6 @@ import './App.scss';
 
 const App: FC<Record<string, unknown>> = () => {
   const { pathname } = useLocation();
-  useEffect(() => {
-    Amplitude.logEvent('init', { pathname });
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const { data } = useData(
     'https://api.soundcloud.com/playlists/310569779.json?client_id=9f32c400308da184e94e83dbbf3391c7',
@@ -43,7 +39,6 @@ const App: FC<Record<string, unknown>> = () => {
       isFirstUpdate.current = false;
       return;
     }
-    Amplitude.logEvent('navigate', { pathname });
   }, [pathname]);
 
   return (

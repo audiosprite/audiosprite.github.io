@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Amplitude } from '../../amplitude/amplitude';
 import { Spacer, Third } from '../../components';
 import { email } from '../../data';
 import { Social } from '../../features';
@@ -9,7 +8,6 @@ const Contact: React.FC<Record<string, unknown>> = () => {
   const [emailHasBeenClicked, setEmailHasBeenClicked] = React.useState(false);
   const handleClickEmail = () => {
     if (!emailHasBeenClicked) {
-      Amplitude.logEvent('emailClicked');
       setEmailHasBeenClicked(true);
     }
   };

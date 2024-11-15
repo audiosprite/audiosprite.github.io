@@ -3,7 +3,6 @@ import {
   Link as ReactRouterLink,
   LinkProps as RRLinkProps,
 } from 'react-router-dom';
-import { Amplitude } from '../../amplitude/amplitude';
 import './Link.scss';
 
 type LinkProps = Omit<RRLinkProps, 'to'> & {
@@ -23,7 +22,6 @@ const Link: React.FC<LinkProps> = ({
 }) => {
   const Component = to ? ReactRouterLink : href ? 'a' : 'div';
   const onClick = (e: any) => {
-    if (href) Amplitude.logEvent('navigateExternal', { href });
     if (handleClick) handleClick(e);
   };
   return (
