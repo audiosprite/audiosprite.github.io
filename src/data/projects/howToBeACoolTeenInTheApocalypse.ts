@@ -7,13 +7,14 @@ export default {
   },
   genrePool: [[Genre['punk'], Genre['rock']]],
   name: 'How To Be A Cool Teen In The Apocalypse',
+  releaseDate: new Date('2023'),
   type: ProjectType['shortfilm'],
   roles: [Role['music']],
   stores: [
     {
       name: StoreName['youtube'],
       // temp trailer link
-      url: 'https://youtu.be/asSUYNkLigs?si=734oLiyInrdebxNj',
+      url: 'https://www.youtube.com/watch?v=LPVsA_u8ULU',
     },
   ],
 };

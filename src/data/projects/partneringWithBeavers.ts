@@ -11,7 +11,13 @@ export default {
     name: 'Natural Resources Defense Council',
     url: 'https://www.nrdc.org/',
   },
-  //   releaseDate: new Date('May 7, 2022'),
+  releaseDate: new Date('Oct 13, 2023'),
+  stores: [
+    {
+      name: StoreName['youtube'],
+      url: 'https://www.youtube.com/watch?v=QQbg4QrVryI',
+    },
+  ],
   type: ProjectType['shortfilm'],
   roles: [Role['music']],
 };
