@@ -72,7 +72,13 @@ const ProjectsTableBody: React.FC<ProjectsTableBodyProps> = ({
             </div>
           </ProjectsTableCell>
           <ProjectsTableCell className={columns[5]}>
-            {releaseDate?.getFullYear() || '-'}
+            {Array.isArray(releaseDate) &&
+              releaseDate
+                .map(
+                  (date: Date | undefined) => date?.getFullYear() ?? 'current',
+                )
+                .join(' - ')}
+            {!Array.isArray(releaseDate) && (releaseDate?.getFullYear() ?? '-')}
           </ProjectsTableCell>
         </tr>
       ),

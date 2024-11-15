@@ -8,13 +8,13 @@ export default {
   genrePool: [],
   name: 'I Want to Fuck That Gorilla',
   type: ProjectType['shortfilm'],
-  // releaseDate: new Date(),
+  releaseDate: new Date('Jan 15, 2024'),
   roles: [Role['music']],
   selectTracks: [],
-  // stores: [
-  //   {
-  //     name: StoreName['youtube'],
-  //     url: 'https://www.youtube.com/watch?v=uV5sYqt2D30',
-  //   },
-  // ],
+  stores: [
+    {
+      name: StoreName['youtube'],
+      url: 'https://www.youtube.com/watch?v=9_lDFmc0ns8',
+    },
+  ],
 };

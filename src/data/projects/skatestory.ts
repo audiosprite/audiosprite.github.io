@@ -1,4 +1,4 @@
-import { ProjectType, Role } from '../../types';
+import { ProjectType, Role, StoreName } from '../../types';
 
 export default {
   developer: {
@@ -11,6 +11,12 @@ export default {
     url: 'https://www.devolverdigital.com/',
   },
   roles: [Role.music],
+  stores: [
+    {
+      name: StoreName['steam'],
+      url: 'https://store.steampowered.com/app/1263240/Skate_Story/',
+    },
+  ],
   type: ProjectType.game,
   url: 'http://www.skatestorygame.com/',
 };

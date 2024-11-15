@@ -9,11 +9,13 @@ export const projectsTableColumns = ['', 'project', '', '', 'with', 'release'];
 
 const initialSortBy = { column: 'release', reverse: false };
 const ProjectsTableContext = React.createContext({
-  handleSort: () => {},
+  handleSort: () => {
+    //
+  },
   sortBy: initialSortBy,
 });
 
-const ProjectsTable = () => {
+const ProjectsTable: React.FC = () => {
   const { handleSort, sortBy } = useSort(initialSortBy);
   // const sortedProjects = projects.sort(sortBy);
   return (
