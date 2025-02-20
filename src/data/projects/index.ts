@@ -22,6 +22,7 @@ import shillelagh from './shillelagh';
 import skatestory from './skatestory';
 import supercrome from './supercrome';
 import swordcoastcoast2coast from './swordcoastcoast2coast';
+import theOgre from './theOgre';
 import theProcess from './theProcess';
 import trance from './trance';
 import unwound from './unwound';
@@ -30,6 +31,7 @@ import zarvot from './zarvot';
 
 const projects: Project[] = [
   skatestory,
+  theOgre,
   theProcess,
   unwound,
   canoeDigIt,

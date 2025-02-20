@@ -13,6 +13,7 @@ export enum Genre {
   disco = 'Disco',
   doom = 'Doom',
   downtempo = 'Downtempo',
+  electronic = 'Electronic',
   eleki = 'Eleki',
   funk = 'Funk',
   grunge = 'Grunge',
