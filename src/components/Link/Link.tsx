@@ -5,12 +5,34 @@ import {
 } from 'react-router-dom';
 import './Link.scss';
 
-type LinkProps = Omit<RRLinkProps, 'to'> & {
+type RouterLinkProps = {
+  to: string;
+  href?: never;
   className?: string;
   hideUnderline?: boolean;
-  href?: string;
-  to?: string;
+  onClick?: (e: any) => void;
+  children: React.ReactNode;
 };
+
+type AnchorLinkProps = {
+  href?: string;
+  to?: never;
+  className?: string;
+  hideUnderline?: boolean;
+  onClick?: (e: any) => void;
+  children: React.ReactNode;
+};
+
+type DivProps = {
+  to?: never;
+  href?: never;
+  className?: string;
+  hideUnderline?: boolean;
+  onClick?: (e: any) => void;
+  children: React.ReactNode;
+};
+
+type LinkProps = RouterLinkProps | AnchorLinkProps | DivProps;
 
 const Link: React.FC<LinkProps> = ({
   className = '',
@@ -20,21 +42,49 @@ const Link: React.FC<LinkProps> = ({
   onClick: handleClick,
   to,
 }) => {
-  const Component = to ? ReactRouterLink : href ? 'a' : 'div';
   const onClick = (e: any) => {
     if (handleClick) handleClick(e);
   };
+
+  if (to) {
+    return (
+      <ReactRouterLink
+        to={to}
+        className={`Link ${className} ${
+          hideUnderline ? 'hideUnderline' : ''
+        }`.trim()}
+        onClick={onClick}
+      >
+        {children}
+      </ReactRouterLink>
+    );
+  }
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className={`Link ${className} ${
+          hideUnderline ? 'hideUnderline' : ''
+        }`.trim()}
+        onClick={onClick}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Component
+    <div
       className={`Link ${className} ${
         hideUnderline ? 'hideUnderline' : ''
       }`.trim()}
-      {...(Component === ReactRouterLink ? { to } : {})}
-      {...(Component === 'a' ? { href, target: '__blank' } : {})}
       onClick={onClick}
     >
       {children}
-    </Component>
+    </div>
   );
 };
 

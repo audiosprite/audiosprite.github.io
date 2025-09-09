@@ -34,28 +34,28 @@ const App: FC = () => {
   }, [pathname]);
 
   return (
-    <PlaylistProvider apiTracks={data?.tracks || soundcloudData.tracks}>
-      <div className="App">
-        <div className="App--Background" />
-        <Header />
-        <Spacer spacing={81} />
-        <div className="AppBody">
-          <Suspense fallback={<div />}>
-            <Routes>
-              <Route path="/" element={<JustReleased />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/press" element={<Press />} />
-              <Route path="/credits" element={<Projects />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/utils" element={<Utils />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </Suspense>
-        </div>
-        <Footer />
+    // <PlaylistProvider apiTracks={data?.tracks || soundcloudData.tracks}>
+    <div className="App">
+      <div className="App--Background" />
+      <Header />
+      <Spacer spacing={81} />
+      <div className="AppBody">
+        <Suspense fallback={<div />}>
+          <Routes>
+            <Route path="/" element={<JustReleased />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/press" element={<Press />} />
+            <Route path="/credits" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/utils" element={<Utils />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Suspense>
       </div>
-    </PlaylistProvider>
+      <Footer />
+    </div>
+    // </PlaylistProvider>
   );
 };
 
