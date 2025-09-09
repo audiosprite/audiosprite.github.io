@@ -1,3 +1,5 @@
+nvm use 16.20.2
+
 # Single Page Apps for GitHub Pages
 
 [Demo app][demoapp]

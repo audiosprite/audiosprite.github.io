@@ -26,7 +26,7 @@ import './App.scss';
 //   </Third>
 // );
 
-const App: FC<Record<string, unknown>> = () => {
+const App: FC = () => {
   const { pathname } = useLocation();
 
   const { data } = useData(
