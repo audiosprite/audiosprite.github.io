@@ -10,6 +10,7 @@ export default {
     name: 'Devolver Digital',
     url: 'https://www.devolverdigital.com/',
   },
+  releaseDate: new Date('December 8, 2025'),
   roles: [Role.music],
   stores: [
     {

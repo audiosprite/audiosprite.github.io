@@ -15,4 +15,5 @@ export default {
   //       url: 'https://vimeo.com/798022866',
   //     },
   //   ],
+  url: 'https://www.samuelfddunning.com/canoe-dig-it',
 };

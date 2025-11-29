@@ -25,7 +25,6 @@ import swordcoastcoast2coast from './swordcoastcoast2coast';
 import theOgre from './theOgre';
 import theProcess from './theProcess';
 import trance from './trance';
-import unwound from './unwound';
 import wholesomeslaughter from './wholesomeslaughter';
 import zarvot from './zarvot';
 
@@ -33,7 +32,6 @@ const projects: Project[] = [
   skatestory,
   theOgre,
   theProcess,
-  unwound,
   canoeDigIt,
   iWantToFuckThatGorilla,
   partneringWithBeavers,

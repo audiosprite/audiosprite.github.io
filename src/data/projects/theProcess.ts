@@ -7,7 +7,7 @@ export default {
   },
   name: 'The Process',
   type: ProjectType['podcast'],
-  releaseDate: [new Date('Sept 15, 2023'), undefined],
+  releaseDate: [new Date('Sept 15, 2023'), new Date('May 22, 2025')],
   roles: [Role['music']],
   selectTracks: [],
   stores: [
