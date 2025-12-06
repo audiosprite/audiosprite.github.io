@@ -1,10 +1,16 @@
-import { ProjectType, Role, StoreName } from '../../types';
+import { MusicStoreName, ProjectType, Role, StoreName } from '../../types';
 
 export default {
   developer: {
     name: 'bysameng',
     url: 'http://www.skatestorygame.com/',
   },
+  musicStores: [
+    {
+      name: MusicStoreName['bandcamp'],
+      url: 'https://audiosprite.bandcamp.com/album/skate-story-vol-2',
+    },
+  ],
   name: 'Skate Story',
   publisher: {
     name: 'Devolver Digital',

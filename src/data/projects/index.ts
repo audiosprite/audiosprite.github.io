@@ -9,6 +9,7 @@ import howToBeACoolTeenInTheApocalypse from './howToBeACoolTeenInTheApocalypse';
 import ilivelikethis from './ilivelikethis';
 import iWantToFuckThatGorilla from './iWantToFuckThatGorilla';
 import intothedarknarakan from './intothedarknarakan';
+import itsgettinglate from './itsgettinglate';
 import kungfukickball from './kungfukickball';
 import magesandmurderdads from './magesandmurderdads';
 import mangoman from './mangoman';
@@ -30,6 +31,7 @@ import zarvot from './zarvot';
 
 const projects: Project[] = [
   skatestory,
+  itsgettinglate,
   theOgre,
   theProcess,
   canoeDigIt,

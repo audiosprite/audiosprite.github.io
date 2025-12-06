@@ -9,7 +9,7 @@ export const projectsTableColumns = ['', 'project', '', '', 'with', 'release'];
 
 const initialSortBy = { column: 'release', reverse: false };
 const ProjectsTableContext = React.createContext({
-  handleSort: () => {
+  handleSort: (fieldName: string) => {
     //
   },
   sortBy: initialSortBy,
