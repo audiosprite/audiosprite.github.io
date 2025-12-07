@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Heading } from '../../components';
 import './Album.scss';
 
 export const Album = () => {
@@ -11,7 +12,7 @@ export const Album = () => {
       >
         <img src="/build/img/albums/skate-story-vol-2.jpg" alt="Album" />
       </a>
-      <h1>Skate Story: Vol. 2</h1>
+      <Heading as="h2">Skate Story: Vol. 2</Heading>
       <p>Coming soon</p>
     </div>
   );
