@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-
+export const Album = lazy(() => import('./Album'));
 export const About = lazy(() => import('./About/About'));
 export const Blog = lazy(() => import('./Blog/Blog'));
 export const Contact = lazy(() => import('./Contact/Contact'));

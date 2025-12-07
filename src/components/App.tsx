@@ -5,6 +5,7 @@ import { useData } from '../hooks';
 import { Footer, Header } from '../features';
 import {
   About,
+  Album,
   Blog,
   Contact,
   Home,
@@ -42,7 +43,8 @@ const App: FC = () => {
       <div className="AppBody">
         <Suspense fallback={<div />}>
           <Routes>
-            <Route path="/" element={<JustReleased />} />
+            {/* <Route path="/" element={<JustReleased />} /> */}
+            <Route path="/" element={<Album />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/press" element={<Press />} />
             <Route path="/credits" element={<Projects />} />
