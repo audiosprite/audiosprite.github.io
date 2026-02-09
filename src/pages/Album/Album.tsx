@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Heading } from '../../components';
 import './Album.scss';
 
+//  <iframe style="border: 0; width: 350px; height: 786px;" src="https://bandcamp.com/EmbeddedPlayer/album=2108143031/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="https://audiosprite.bandcamp.com/album/skate-story-vol-2">Skate Story: Vol. 2 by John Fio</a></iframe>
+
 const BandcampIframe = () => (
   <iframe
     style={{
@@ -9,10 +11,10 @@ const BandcampIframe = () => (
       borderRadius: '16px',
       boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
       width: '500px',
-      height: '620px',
+      height: '970px',
       marginBottom: '75px',
     }}
-    src="https://bandcamp.com/EmbeddedPlayer/album=2108143031/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+    src="https://bandcamp.com/EmbeddedPlayer/album=2108143031/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/"
     seamless
     title="Skate Story: Vol. 2"
   >
