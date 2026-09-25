@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>http://johnf.io/</loc>
-  <loc>http://johnf.io/?/credits</loc>
-  <loc>http://johnf.io/?/press</loc>
-  <loc>http://johnf.io/?/about</loc>
-  <loc>http://johnf.io/?/contact</loc>
-  <lastmod>2021-03-21T18:42:25+00:00</lastmod>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://johnf.io/</loc>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+  <url>
+    <loc>https://johnf.io/?/credits</loc>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+  <url>
+    <loc>https://johnf.io/?/press</loc>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+  <url>
+    <loc>https://johnf.io/?/about</loc>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+  <url>
+    <loc>https://johnf.io/?/contact</loc>
+    <lastmod>2026-09-25</lastmod>
+  </url>
 </urlset>

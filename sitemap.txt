@@ -1,5 +1,5 @@
-http://johnf.io/
-http://johnf.io/?/credits
-http://johnf.io/?/press
-http://johnf.io/?/about
-http://johnf.io/?/contact
+https://johnf.io/
+https://johnf.io/?/credits
+https://johnf.io/?/press
+https://johnf.io/?/about
+https://johnf.io/?/contact
