@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { FC, Suspense, useEffect, useRef } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { useData } from '../hooks';
 import { Footer, Header } from '../features';
 import {
   About,
@@ -21,10 +20,6 @@ import './App.scss';
 
 const App: FC = () => {
   const { pathname } = useLocation();
-
-  const { data } = useData(
-    'https://api.soundcloud.com/playlists/310569779.json?client_id=9f32c400308da184e94e83dbbf3391c7',
-  );
 
   const isFirstUpdate = useRef(true);
   useEffect(() => {
