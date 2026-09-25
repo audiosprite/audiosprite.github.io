@@ -7,7 +7,7 @@ const src =
 const imgSrc =
   'https://assets.libsyn.com/secure/content/29999876/?height=250&width=250';
 const mp3src =
-  'http://traffic.libsyn.com/preview/rebelfm/The_Rebel_FM_2018_Game_Music_Spectactular.mp3';
+  'https://traffic.libsyn.com/preview/rebelfm/The_Rebel_FM_2018_Game_Music_Spectactular.mp3';
 const srcAtTime = `${mp3src}#t=02:58:43`;
 const srcAtTimeTalking = `${mp3src}#t=03:01:45`;
 
