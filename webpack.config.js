@@ -32,10 +32,10 @@ module.exports = {
       { test: /\.(tsx?|js)$/, exclude: /node_modules/, loader: 'ts-loader' },
       { test: /\.js$/, loader: 'source-map-loader' },
       {
-        test: /\.(ttf|eot|woff|woff2|gz)$/,
-        loader: 'file-loader',
-        options: {
-          name: 'fonts/[name].[ext]',
+        test: /\.(ttf|eot|woff|woff2)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
         },
       },
       {
