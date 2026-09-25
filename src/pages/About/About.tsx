@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link, Spacer, Third } from '../../components';
 import { Img } from '../../components/Icons';
 import './About.scss';
@@ -23,32 +24,46 @@ Since then, John has had the opportunity of contributing original music to a <a 
 
 He lives in Brooklyn, New York, and is a mainstay of the local competitive <i>Super Smash Bros. Melee</i> scene.`.trim();
 
-const About: React.FC = () => (
-  <div className="About">
-    {/* <Third> */}
-    <div className="About--Inner">
-      <div className="About--PortraitWrapper">
-        <div className="About--PortraitContent">
-          <Img
-            alt="John Fio"
-            className="About--Portrait"
-            src="photos/signalawards-crop.jpg"
-          />
-          <Spacer />
-          <div>
-            photo ©{' '}
-            <Link href="https://www.signalaward.com/">The Signal Awards</Link>
+const About: React.FC = () => {
+  const navigate = useNavigate();
+
+  // keep in-site links in the bio inside the router instead of reloading
+  const handleBioClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const href = (e.target as HTMLElement).closest('a')?.getAttribute('href');
+    if (href?.startsWith('/') && !e.metaKey && !e.ctrlKey && !e.shiftKey) {
+      e.preventDefault();
+      navigate(href);
+    }
+  };
+
+  return (
+    <div className="About">
+      {/* <Third> */}
+      <div className="About--Inner">
+        <div className="About--PortraitWrapper">
+          <div className="About--PortraitContent">
+            <Img
+              alt="John Fio"
+              className="About--Portrait"
+              src="photos/signalawards-crop.jpg"
+            />
+            <Spacer />
+            <div>
+              photo ©{' '}
+              <Link href="https://www.signalaward.com/">The Signal Awards</Link>
+            </div>
           </div>
         </div>
+        {/* <div className="About--Copy">{testBio}</div> */}
+        <div
+          className="About--Copy"
+          onClick={handleBioClick}
+          dangerouslySetInnerHTML={{ __html: testBio }}
+        />
       </div>
-      {/* <div className="About--Copy">{testBio}</div> */}
-      <div
-        className="About--Copy"
-        dangerouslySetInnerHTML={{ __html: testBio }}
-      />
+      {/* </Third> */}
     </div>
-    {/* </Third> */}
-  </div>
-);
+  );
+};
 
 export default About;
