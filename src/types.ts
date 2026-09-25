@@ -27,7 +27,7 @@ export enum Genre {
   orchestral = 'Orchestral',
   punk = 'Punk',
   rock = 'Rock',
-  spiritual = 'Spirital',
+  spiritual = 'Spiritual',
   wonky = 'Wonky',
 }
 
