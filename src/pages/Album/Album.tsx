@@ -10,8 +10,10 @@ const BandcampIframe = () => (
       border: '0',
       borderRadius: '16px',
       boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
-      width: '500px',
-      height: '970px',
+      width: '100%',
+      maxWidth: '500px',
+      // the player is a square cover plus a 470px tracklist
+      height: 'calc(min(100vw - 32px, 500px) + 470px)',
       marginBottom: '75px',
     }}
     src="https://bandcamp.com/EmbeddedPlayer/album=2108143031/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/"
